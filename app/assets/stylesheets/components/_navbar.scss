@@ -1,12 +1,72 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
-}
+// Paleta de cores
+$navbar-bg: $black; // Fundo da navbar
+$link-color: $gainsboro; // Cor do texto dos links
+$link-active-shadow: $lime; // Sombra lime para link ativo
+$navbar-shadow: $palatine-purple; // Sombra da navbar
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
+// Navbar
+.navbar {
+  background-color: $navbar-bg;
+  box-shadow: 0px 4px 4px $navbar-shadow; // Sombra da navbar
+  padding: 10px 0px;
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+  .navbar-nav {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    .nav-item {
+      align-items: center;
+
+
+      .nav-link {
+        width: 170px;
+        height: 30px;
+        text-decoration: none;
+        color: $link-color; // Cor do texto
+        background-color: $persian-indigo;
+        padding: 5px 12px;
+        border-radius: 10px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.3s ease;
+
+        &:hover {
+          transform: translateY(-2px); // Elevação leve
+        }
+
+        &.disabled {
+          color: $link-color; // Cor Gainsboro
+          opacity: 0.6; // Menor opacidade para indicar estado desativado
+        }
+      }
+
+      // Link ativo (página atual)
+      &.active .nav-link {
+        box-shadow: 0px 4px 4px $link-active-shadow; // Sombra verde
+      }
+    }
+
+    .avatar {
+      color: $lime;
+      font-size: 1.5rem;
+      padding: 5px;
+      margin-left: 10px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        transform: scale(1.1);
+        transition: all 0.2s ease;
+      }
+    }
+  }
 }
