@@ -1,1 +1,47 @@
-// Specific CSS for your home-page
+.homepage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $persian-indigo;
+  color: $gainsboro;
+  height: 100vh;
+
+  .logo-container {
+    .logo {
+      width: 500px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+  }
+
+  .text-lime {
+    color: $lime;
+    -webkit-text-stroke: 1.1px $midnight-express;
+
+  }
+
+  .search-bar {
+    width: 80%;
+    max-width: 600px;
+
+    input {
+    border: 2px solid $midnight-express;
+    background-color: $gainsboro;
+    color: $nero;
+    box-shadow: 0 4px 15px $lime;
+    border-radius: 20px;
+    padding: 10px;
+
+
+    &::placeholder {
+      color: $nero;
+      opacity: 0.7;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+  }
+}

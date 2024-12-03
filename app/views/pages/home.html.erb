@@ -1,2 +1,17 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="homepage">
+  <div class="logo-container text-center mt-5">
+    <%= image_tag "Logo.png", alt: "Coding 4 Newbs Logo", class: "logo" %>
+  </div>
+  <h5 class="text-lime">Search on C4N:</h5>
+  <div class="search-bar mt-3">
+    <input
+    type="text"
+    class="form-control"
+    id="search-input"
+    placeholder="Type here..."
+    />
+  </div>
+  <div class="popular-searches mt-5">
+    <h5 class="text-lime">Most Popular:</h5>
+  </div>
+</div>
