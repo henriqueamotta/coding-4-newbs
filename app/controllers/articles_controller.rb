@@ -1,33 +1,49 @@
 class ArticlesController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show] # verifica a autenticação do admin para criar, excluir e editar terms
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :set_article, only: [:show, :edit, :update, :destroy]
-  after_action :verify_authorized, except: [:index, :show] # dupla verificação para autenticar o admin
+  after_action :verify_authorized, except: [:index, :show], unless: :skip_pundit?
+  after_action :verify_policy_scoped, only: [:index], unless: :skip_pundit?
 
   def index
     @articles = policy_scope(Article)
   end
 
   def show
-    @article = Article.find(params[:id])
+    authorize @article
   end
 
   def new
     @article = Article.new
+    authorize @article
   end
 
   def create
     @article = Article.new(article_params)
+    authorize @article
     if @article.save
-      redirect_to @article
+      redirect_to @article, notice: 'Article was successfully created.'
     else
       render :new
     end
   end
 
+  def edit
+    authorize @article
+  end
+
   def update
+    authorize @article
+    if @article.update(article_params)
+      redirect_to @article, notice: 'Article was successfully updated.'
+    else
+      render :edit
+    end
   end
 
   def destroy
+    authorize @article
+    @article.destroy
+    redirect_to articles_path, notice: 'Article was successfully deleted.'
   end
 
   private
