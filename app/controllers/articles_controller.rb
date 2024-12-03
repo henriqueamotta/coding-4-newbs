@@ -1,4 +1,8 @@
 class ArticlesController < ApplicationController
+    before_action :authenticate_user!, except: [:index, :show] # verifica a autenticação do admin para criar, excluir e editar terms
+    # after_action :verify_authorized # dupla verificação para autenticar o admin
+
+
     def index
       @articles = Article.all
     end
@@ -18,6 +22,14 @@ class ArticlesController < ApplicationController
       else
         render :new
       end
+    end
+
+    def update
+    
+    end
+
+    def destroy
+    
     end
   
     private
