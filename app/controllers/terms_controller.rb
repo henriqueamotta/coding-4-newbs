@@ -1,6 +1,7 @@
 class TermsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show] # verifica a autenticação do admin para criar, excluir e editar terms
-  after_action :verify_authorized # dupla verificação para autenticar o admin
+  before_action :set_article, only: [:show, :edit, :update, :destroy]
+  after_action :verify_authorized, except: [:index, :show] # dupla verificação para autenticar o admin
 
   def index
     @terms = Term.all
@@ -41,6 +42,10 @@ class TermsController < ApplicationController
   end
 
   private
+
+  def set_term
+    @term = Term.find(params[:id])
+  end
 
   def term_params
     params.require(:term).permit(:name, :description)
