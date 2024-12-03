@@ -7,16 +7,15 @@
 // General style
 $font-family-sans-serif: $body-font;
 $headings-font-family:   $headers-font;
-$body-bg:                $light-gray;
+$subtitles: $subtitle-font;
+$body-bg:                $persian-indigo;
 $font-size-base:         1rem;
 
 // Colors
-$body-color: $gray;
-$primary:    $blue;
-$success:    $green;
-$info:       $yellow;
-$danger:     $red;
-$warning:    $orange;
+$body-color: $gainsboro;
+$nav-btn:    $persian-indigo;
+$search-btn: $nero;
+
 
 // Buttons & inputs' radius
 $border-radius-sm:            .0625rem;
