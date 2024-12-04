@@ -20,11 +20,11 @@
         </li>
         <!-- Articles -->
         <li class="nav-item <%= 'active' if current_page?(articles_path) %>">
-          <a class="nav-link" href="#">ARTICLES</a>
+          <a class="nav-link" href="<%= articles_path %>">ARTICLES</a>
         </li>
         <!-- Terms -->
         <li class="nav-item <%= 'active' if current_page?(terms_path) %>">
-          <a class="nav-link" href="#">TERMS</a>
+          <a class="nav-link" href="<%= terms_path %>">TERMS</a>
         </li>
         <!-- AI (desativado) -->
         <li class="nav-item">
@@ -35,9 +35,6 @@
             aria-disabled="true"
           >AI</a>
         </li>
-      </ul>
-
-      <ul class="navbar-nav ms-auto">
         <% if current_user %>
           <li class="nav-item">
             <a class="nav-link avatar">
