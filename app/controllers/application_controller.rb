@@ -4,7 +4,6 @@ class ApplicationController < ActionController::Base
 
   # after_action :verify_authorized, except: [:home, :show], unless: :skip_pundit?
   # after_action :verify_policy_scoped, only: [:home, :index, :show], unless: :skip_pundit?
-  # after_action :verify_policy_scoped, only: [:index, :show], unless: :skip_pundit?
 
   # Desabilitado enquanto procuramos solução, continuar depois.
 
