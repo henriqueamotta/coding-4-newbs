@@ -2,8 +2,8 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   include Pundit::Authorization
 
-  after_action :verify_authorized, except: [:home, :show], unless: :skip_pundit?
-  after_action :verify_policy_scoped, only: [:home, :index, :show], unless: :skip_pundit?
+  # after_action :verify_authorized, except: [:home, :show], unless: :skip_pundit?
+  # after_action :verify_policy_scoped, only: [:home, :index, :show], unless: :skip_pundit?
 
   private
 
