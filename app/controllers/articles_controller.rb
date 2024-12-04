@@ -33,6 +33,9 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def home
+  end
+  
   def edit
     authorize @article
   end
