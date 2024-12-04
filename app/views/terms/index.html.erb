@@ -1,0 +1,11 @@
+<h1>Terms#index</h1>
+
+<% if user_signed_in? && current_user.admin? %>
+  <%= link_to 'New Term', new_term_path %>
+<% end %>
+
+<% @terms.each do |term| %>
+  <h2><%= link_to term.name, term %></h2>
+<% end %>
+
+<%= link_to 'New term', new_term_path if policy(Term).create? %>
