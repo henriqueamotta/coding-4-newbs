@@ -27,6 +27,10 @@ class TermsController < ApplicationController
     end
   end
 
+
+  def home
+  end
+
   def edit
     authorize @term
   end
