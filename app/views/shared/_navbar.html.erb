@@ -1,32 +1,62 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-expand-sm navbar-light custom-navbar">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" />
-</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home</a>
+      <ul class="navbar-nav mx-auto">
+        <!-- Home -->
+        <li class="nav-item <%= 'active' if current_page?(root_path) %>">
+          <a class="nav-link" href="<%= root_path %>">HOME</a>
+        </li>
+        <!-- Articles -->
+        <li class="nav-item <%= 'active' if current_page?(articles_path) %>">
+          <a class="nav-link" href="#">ARTICLES</a>
+        </li>
+        <!-- Terms -->
+        <li class="nav-item <%= 'active' if current_page?(terms_path) %>">
+          <a class="nav-link" href="#">TERMS</a>
+        </li>
+        <!-- AI (desativado) -->
+        <li class="nav-item">
+          <a
+            class="nav-link disabled"
+            href="#"
+            tabindex="-1"
+            aria-disabled="true"
+          >AI</a>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav ms-auto">
+        <% if current_user %>
+          <li class="nav-item">
+            <a class="nav-link avatar">
+              <i class="fas fa-user-circle"></i>
+            </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Messages</a>
+            <a
+              class="nav-link"
+              href="<%= destroy_user_session_path %>"
+              data: { turbo-method: :delete }
+            >LOGOUT</a>
           </li>
-          <li class="nav-item dropdown">
-            <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" data-turbo-method="delete" href="#">Log out</a>
-            </div>
+        <% else %>
+          <li class="nav-item">
+            <a class="nav-link" href="<%= new_user_session_path %>">LOGIN</a>
           </li>
-          <!--li class="nav-item"-->
-          <!--/li-->
+        <% end %>
       </ul>
     </div>
   </div>
 </div>
-
