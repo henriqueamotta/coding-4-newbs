@@ -1,14 +1,15 @@
 class TermsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show] # verifica a autenticação do admin para criar, excluir e editar terms
-  before_action :set_article, only: [:show, :edit, :update, :destroy]
-  after_action :verify_authorized, except: [:index, :show] # dupla verificação para autenticar o admin
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :set_term, only: [:show, :edit, :update, :destroy]
+  after_action :verify_authorized, except: [:index, :show], unless: :skip_pundit?
+  after_action :verify_policy_scoped, only: [:index], unless: :skip_pundit?
 
   def index
-    @terms = Term.all
+    @terms = policy_scope(Term)
   end
 
   def show
-    @term = Term.find(params[:id])
+    authorize @term
   end
 
   def new
@@ -26,10 +27,14 @@ class TermsController < ApplicationController
     end
   end
 
+  def edit
+    authorize @term
+  end
+
   def update
     authorize @term
     if @term.update(term_params)
-      redirect_to @term, notice: 'Term was successfully updated!'
+      redirect_to @term, notice: 'Term was successfully updated.'
     else
       render :edit
     end
@@ -38,7 +43,7 @@ class TermsController < ApplicationController
   def destroy
     authorize @term
     @term.destroy
-    redirect_to terms_path, notice: 'Term was successfully deleted!'
+    redirect_to terms_path, notice: 'Term was successfully deleted.'
   end
 
   private

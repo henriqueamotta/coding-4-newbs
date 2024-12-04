@@ -1,29 +1,28 @@
 class ArticlePolicy < ApplicationPolicy
 
   def index?
-    true
+    true # Qualquer usuário pode listar os termos
   end
 
   def show?
-    true
+    true # Qualquer usuário pode visualizar os termos
   end
 
   def create?
-    user&.admin?
+    user.present? && user.admin? # Apenas administradores logados podem criar
   end
 
   def update?
-    user&.admin?
+    user.present? && user.admin? # Apenas administradores logados podem editar
   end
 
   def destroy?
-    user&.admin?
+    user.present? && user.admin? # Apenas administradores logados podem excluir
   end
 
-  class Scope < ApplicationPolicy::Scope
-    # NOTE: Be explicit about which records you allow access to!
+  class Scope < Scope
     def resolve
-     scope.all
+      scope.all # Retorna todos os termos visíveis para o usuário
     end
   end
 
