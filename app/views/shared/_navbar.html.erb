@@ -19,7 +19,7 @@
           <a class="nav-link" href="<%= root_path %>">HOME</a>
         </li>
         <!-- Articles -->
-        <li class="nav-item <%= 'active' if current_page?(articles_path) %>">
+        <li class="nav-item <%= 'active' if controller_name == 'articles' %>">
           <a class="nav-link" href="<%= articles_path %>">ARTICLES</a>
         </li>
         <!-- Terms -->

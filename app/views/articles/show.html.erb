@@ -1,10 +1,37 @@
-<h1>Show#article</h1>
+<div class="article-show">
+  <!-- Autor do artigo -->
+  <div class="author-section">
+    <div class="avatar">
+      <i class="fas fa-user-circle"></i>
+    </div>
+    <div class="author-info">
+      <h6>Article By</h6>
+      <p>Lata</p>
+    </div>
+  </div>
 
-view para o admin
-<h1><%= @article.name %></h1>
-<p><%= @article.content %></p>
+  <!-- Título do artigo -->
+  <div class="header">
+    <h1><%= @article.name %></h1>
+    <p class="subtitle">
+      <%= truncate(@article.content, length: 104) %>
+    </p>
+  </div>
 
-<% if user_signed_in? && current_user.admin? %>
-  <%= link_to 'Edit', edit_article_path(@article) %> |
-  <%= link_to 'Delete', @article, method: :delete, data: { confirm: 'Are you sure?' } %>
-<% end %>
+  <!-- Imagem em destaque -->
+  <div class="image">
+    <%= image_tag(asset_path("code.jpg"), alt: @article.name) %>
+  </div>
+
+  <!-- Conteúdo completo do artigo -->
+  <div class="content">
+    <p><%= simple_format(@article.content) %></p>
+  </div>
+
+  <!-- Botão para voltar ao topo -->
+  <div class="back-to-top">
+    <a href="#top">
+      <i class="fas fa-arrow-up"></i>
+    </a>
+  </div>
+</div>
