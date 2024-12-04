@@ -1,9 +1,37 @@
-<h1>index#article</h1>
+<div class="articles-page">
+  <div class="header">
+    <i class="fa-brands fa-readme"></i>
+    <h1>ARTICLES</h1>
+  </div>
 
-<% if user_signed_in? && current_user.admin? %>
-  <%= link_to 'New Article', new_article_path %>
-<% end %>
+  <% if @featured_article %>
+    <div class="featured-article">
+      <div class="image">
+        <%= link_to image_tag(asset_path('code.jpg'), alt: "code"), article_path(@articles.first) %>
+      </div>
+      <div class="content">
+        <h2><%= @featured_article.name %></h2>
+        <p><%= truncate(@featured_article.content, length: 200) %></p>
+        <%= link_to "Read More", article_path(@featured_article), class: "btn-read-more" %>
+      </div>
+    </div>
+  <% end %>
 
-<% @articles.each do |article| %>
-  <h2><%= link_to article.name, article %></h2>
-<% end %>
+  <div class="latest-articles">
+    <h3>Latest</h3>
+    <div class="articles-grid">
+      <% @articles.each do |article| %>
+        <div class="card">
+          <div class="card-image">
+            <%= link_to image_tag(asset_path('ruby.png'), alt: "code"), article_path(article) %>
+          </div>
+          <div class="content">
+            <h4><%= article.name %></h4>
+            <p><%= truncate(article.content, length: 100) %></p>
+            <%= link_to "Read More", article_path(article), class: "btn-read-more" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -64,6 +64,27 @@ article_2 = Article.new(
   )
 article_2.save!
 
+article_3 = Article.new(
+  name: "Ruby on Rails",
+  content: "Simples e Poderoso, Ruby on Rails, muitas vezes referido simplesmente como Rails, é um dos frameworks de desenvolvimento web mais populares e influentes. Concebido por David Heinemeier Hansson e lançado em 2005, este framework open source baseado na linguagem de programação Ruby tem revolucionado a maneira como os desenvolvedores constroem aplicativos web.",
+  term_id: term_1.id
+  )
+article_3.save!
+
+article_4 = Article.new(
+  name: "DRY (Don't Repeat Yourself)",
+  content: "O princípio DRY é uma parte fundamental do Rails. Os desenvolvedores são incentivados a evitar a duplicação de código, o que contribui para um código mais limpo e uma manutenção mais fácil.",
+  term_id: term_2.id
+  )
+article_4.save!
+
+article_5 = Article.new(
+  name: "LINGUAGENS DE PROGRAMAÇÃO",
+  content: "Linguagens de programação são ferramentas criadas pelo ser humano para se comunicar com computadores. Elas permitem que escrevamos instruções que a máquina pode entender e executar. Cada linguagem tem suas próprias regras e sintaxe, mas todas compartilham o mesmo objetivo: facilitar a interação entre humanos e máquinas.",
+  term_id: term_2.id
+  )
+article_5.save!
+
 
 # 5. Display a message:
 puts "Finished! Created #{User.count} users."

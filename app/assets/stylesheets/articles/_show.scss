@@ -1,0 +1,107 @@
+.article-show {
+  padding: 20px;
+  color: $gainsboro;
+  position: relative;
+
+  .author-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+
+    .avatar {
+      font-size: 3rem;
+      color: $lime;
+      margin-right: 20px;
+    }
+
+    .author-info {
+      h6 {
+        font-family: $headers-font;
+        font-size: 15px;
+        color: $lime;
+        margin: 0;
+      }
+
+      p {
+        font-family: $subtitle-font;
+        color: lighten($gainsboro, 20%);
+        font-size: 15px;
+        margin: 0;
+      }
+    }
+  }
+
+  .header {
+    text-align: center;
+    margin-bottom: 20px;
+
+    h1 {
+      font-family: $headers-font;
+      font-size: 2.5rem;
+      color: transparent;
+      background: linear-gradient(90deg, #019fb0, #02e3c9, $lime);
+      -webkit-background-clip: text;
+      background-clip: text;
+      text-shadow:
+        0 2px 4px rgba(4, 233, 0, 0.836),
+        0 4px 6px rgba(255, 255, 255, 0.726),
+        0px -2px 5px rgba(2, 227, 201, 0.7);
+    }
+  }
+
+    .subtitle {
+      font-size: 15px;
+      color: lighten($lime, 20%);
+      margin-top: 10px;
+    }
+
+
+  .image {
+    text-align: center;
+    margin: 20px 0;
+
+    img {
+      width: 80%;
+      max-width: 800px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  .content {
+    margin-top: 20px;
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: justify;
+    color: lighten($gainsboro, 20%);
+  }
+
+  .back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 10;
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      background-color: $lime;
+      border-radius: 50%;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+      text-decoration: none;
+
+      i {
+        color: $black;
+        font-size: 1.5rem;
+      }
+
+      &:hover {
+        background-color: lighten($lime, 10%);
+        box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.5);
+      }
+    }
+  }
+}
