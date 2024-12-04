@@ -7,7 +7,7 @@ $navbar-shadow: $palatine-purple; // Sombra da navbar
 // Navbar
 .navbar {
   background-color: $navbar-bg;
-  box-shadow: 0px 4px 4px $navbar-shadow; // Sombra da navbar
+  box-shadow: 0px 4px 4px $navbar-shadow;
   padding: 10px 0px;
 
   .navbar-nav {
@@ -20,6 +20,9 @@ $navbar-shadow: $palatine-purple; // Sombra da navbar
     padding: 0;
 
     .nav-item {
+      flex: 0;
+      display: flex;
+      justify-content: center;
       align-items: center;
 
 
@@ -27,7 +30,7 @@ $navbar-shadow: $palatine-purple; // Sombra da navbar
         width: 170px;
         height: 30px;
         text-decoration: none;
-        color: $link-color; // Cor do texto
+        color: $link-color;
         background-color: $persian-indigo;
         padding: 5px 12px;
         border-radius: 10px;
@@ -38,18 +41,18 @@ $navbar-shadow: $palatine-purple; // Sombra da navbar
         transition: all 0.3s ease;
 
         &:hover {
-          transform: translateY(-2px); // Elevação leve
+          transform: translateY(-2px);
         }
 
         &.disabled {
-          color: $link-color; // Cor Gainsboro
-          opacity: 0.6; // Menor opacidade para indicar estado desativado
+          color: $link-color;
+          opacity: 0.6;
         }
       }
 
       // Link ativo (página atual)
       &.active .nav-link {
-        box-shadow: 0px 4px 4px $link-active-shadow; // Sombra verde
+        box-shadow: 0px 4px 4px $link-active-shadow;
       }
     }
 
@@ -59,7 +62,8 @@ $navbar-shadow: $palatine-purple; // Sombra da navbar
       padding: 5px;
       margin-left: 10px;
       border-radius: 50%;
-      display: flex;
+      display: inline-block;
+      vertical-align: middle;
       align-items: center;
       justify-content: center;
 
