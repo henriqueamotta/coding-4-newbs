@@ -6,14 +6,20 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = policy_scope(Article)
-  end
 
-  def show
-    authorize @article
+    # Artigo em destaque(o mais recente)
+    @featured_article = @articles.order(created_at: :desc).first
+
+    # Outros artigos excluindo o destaque
+    @articles = @articles.where.not(id: @featured_article.id) if @featured_article
   end
 
   def new
     @article = Article.new
+    authorize @article
+  end
+
+  def show
     authorize @article
   end
 
