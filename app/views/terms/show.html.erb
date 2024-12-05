@@ -1,6 +1,6 @@
 <h1>Terms#show</h1>
 <h2><%= @term.name %></h2>
-<p><%= @term.description %></p>
+<%= @description_html %>
 
 <% if user_signed_in? && current_user.admin? %>
   <%= link_to 'Edit', edit_term_path(@term) %> |
