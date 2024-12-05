@@ -13,6 +13,8 @@ class TermsController < ApplicationController
 
   def show
     authorize @term
+    markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML.new(render_options = {}))
+    @description_html = markdown.render(@term.description).html_safe
   end
 
   def new
