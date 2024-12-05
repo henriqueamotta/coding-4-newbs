@@ -40,10 +40,10 @@ Term.create!(name: "Hash")
 Term.create!(name: "CRUD")
 Term.create!(name: "DRY")
 
-Article.create!(name: "Javascript", term_id: term_1.id)
-Article.create!(name: "Rails", term_id: term_1.id)
-Article.create!(name: "CSS", term_id: term_1.id)
-Article.create!(name: "HTML", term_id: term_1.id)
+# Article.create!(name: "Javascript", term_id: term_1.id)
+# Article.create!(name: "Rails", term_id: term_1.id)
+# Article.create!(name: "CSS", term_id: term_1.id)
+# Article.create!(name: "HTML", term_id: term_1.id)
 
 # 4. Create the instances:
 # term_1 = Term.new(
