@@ -1,11 +1,21 @@
-<h1>Terms#index</h1>
+<div class="content-wrapper terms-page">
+  <div class="header">
+    <i class="fa-solid fa-list"></i>
+    <h1>TERMS</h1>
+  </div>
 
-<% if user_signed_in? && current_user.admin? %>
-  <%= link_to 'New Term', new_term_path %>
-<% end %>
+  <div class="search-bar">
+    <form action="<%= terms_path %>" method="get">
+      <input type="text" name="query" placeholder="Search..." class="search-input" />
+    </form>
+  </div>
 
-<% @terms.each do |term| %>
-  <h2><%= link_to term.name, term %></h2>
-<% end %>
-
-<%= link_to 'New term', new_term_path if policy(Term).create? %>
+  <div class="terms-container">
+  <div class="terms-list">
+    <% @terms.each do |term| %>
+      <div class="term-item">
+        <%= link_to term.name, term_path(term), class: "term-link" %>
+      </div>
+    <% end %>
+  </div>
+  </div>

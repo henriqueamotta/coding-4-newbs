@@ -1,11 +1,13 @@
-<h1>Terms#show</h1>
-<h2><%= @term.name %></h2>
-<p><%= @term.description %></p>
+<div class="content-wrapper term-show-page">
+  <div class="header">
+    <h2><%= @term.name %></h2>
+  </div>
 
-<% if user_signed_in? && current_user.admin? %>
-  <%= link_to 'Edit', edit_term_path(@term) %> |
-  <%= link_to 'Delete', @term, method: :delete, data: { confirm: 'Are you sure?' } %>
-<% end %>
+  <div class="description-container">
+    <p><%= @description_html %></p>
+  </div>
 
-<%= link_to 'Edit', edit_term_path(@term) if policy(@term).update? %>
-<%= link_to 'Back', terms_path %>
+  <div class="actions">
+    <%= link_to 'Back', terms_path, class: "btn-back" %>
+  </div>
+</div>

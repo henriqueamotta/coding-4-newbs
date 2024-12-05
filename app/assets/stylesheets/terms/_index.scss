@@ -1,0 +1,150 @@
+.terms-page {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 40px;
+  color: $gainsboro;
+  text-align: center;
+
+  .header {
+    position: relative;
+    margin-bottom: 30px;
+
+    h1 {
+      margin-top: 20px;
+      font-family: $headers-font;
+      font-size: 3rem;
+      color: transparent;
+      background: linear-gradient(90deg, #019fb0, #02e3c9, $lime);
+      -webkit-background-clip: text;
+      -webkit-text-stroke: 2px #019fb0;
+      background-clip: text;
+      text-shadow: 0 2px 4px rgba(4, 233, 0, 0.836), 0 4px 6px rgba(255, 255, 255, 0.726), 0px -2px 5px rgba(2, 227, 201, 0.7);
+      position: relative;
+    }
+    h1::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: -10px;
+      transform: translateX(-50%);
+      width: 400px;
+      height: 4px;
+      background: linear-gradient(90deg, $gainsboro, $lime);
+    }
+
+    i {
+      font-size: 3rem;
+      color: $gainsboro;
+      margin-bottom: 10px;
+      text-shadow: 0 4px 4px $black;
+    }
+  }
+
+  .search-bar {
+    margin: 20px auto;
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+ .search-bar form {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  .search-input {
+    width: 100%;
+    max-width: none;
+    border: 2px solid $midnight-express;
+    background-color: $gainsboro;
+    color: $nero;
+    box-shadow: 0 4px 15px $lime;
+    border-radius: 20px;
+    padding: 10px 20px 10px 45px;
+    outline: none;
+  }
+
+  .terms-container {
+    flex: 1;
+    margin: 20px auto 40px auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    background: $gainsboro;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px $lime;
+    border: 2px solid $lime;
+    overflow-y: auto; /* Scroll caso os itens ultrapassem a altura */
+    max-height: 500px; /* Altura máxima para ativar o scroll */
+
+    &::-webkit-scrollbar {
+      width: 10px; /* Largura do scrollbar */
+      background-color: $gainsboro; /* Cor do fundo do scrollbar */
+      border-radius: 25px;
+      margin: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $lime; /* Cor da parte que desliza */
+      border-radius: 25px; /* Deixa arredondado */
+      border: 2px solid $persian-indigo; /* Contorno da parte que desliza */
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: lighten($lime, 10%); /* Cor mais clara ao passar o mouse */
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: darken($persian-indigo, 10%); /* Fundo do track */
+      border-radius: 25px; /* Arredondamento do track */
+      margin: 50px;
+    }
+
+  }
+
+
+  .term-item {
+    margin-bottom: 15px;
+  }
+
+  .term-link {
+    display: block;
+    text-align: center;
+    width: 100%;
+    padding: 15px;
+    background: $persian-indigo;
+    color: $gainsboro;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: all 0.3s;
+
+    &:hover {
+      background: lighten($persian-indigo, 10%);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    }
+  }
+}
+
+.content-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
