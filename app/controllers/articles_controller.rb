@@ -14,12 +14,14 @@ class ArticlesController < ApplicationController
     @articles = @articles.where.not(id: @featured_article.id) if @featured_article
   end
 
-  def new
-    @article = Article.new
+  def show
     authorize @article
+    markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML.new(render_options = {}))
+    @content_html = markdown.render(@article.content).html_safe
   end
 
-  def show
+  def new
+    @article = Article.new
     authorize @article
   end
 
@@ -35,7 +37,7 @@ class ArticlesController < ApplicationController
 
   def home
   end
-  
+
   def edit
     authorize @article
   end
