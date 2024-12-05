@@ -13,9 +13,6 @@
   <!-- Título do artigo -->
   <div class="header">
     <h1><%= @article.name %></h1>
-    <p class="subtitle">
-      <%= truncate(@article.content, length: 104) %>
-    </p>
   </div>
 
   <!-- Imagem em destaque -->
@@ -25,7 +22,7 @@
 
   <!-- Conteúdo completo do artigo -->
   <div class="content">
-    <p><%= simple_format(@article.content) %></p>
+    <p><%= simple_format(@content_html) %></p>
   </div>
 
   <!-- Botão para voltar ao topo -->
