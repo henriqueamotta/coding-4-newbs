@@ -35,15 +35,15 @@ puts user.password
 puts "**********************"
 
 term_1 = Term.create!(name: "Active_Record")
-# Term.create!(name: "Convention Over Configuration")
-# Term.create!(name: "CRUD")
-# Term.create!(name: "DRY")
-# Term.create!(name: "Gem")
-# Term.create!(name: "Hash")
-# Term.create!(name: "MVC")
-# Term.create!(name: "Routes")
-# Term.create!(name: "Ruby")
-# Term.create!(name: "Scaffold")
+Term.create!(name: "Convention Over Configuration")
+Term.create!(name: "CRUD")
+Term.create!(name: "DRY")
+Term.create!(name: "Gem")
+Term.create!(name: "Hash")
+Term.create!(name: "MVC")
+Term.create!(name: "Routes")
+Term.create!(name: "Ruby")
+Term.create!(name: "Scaffold")
 
 article1 = Article.create!(name: "CRUD na prática", term_id: term_1.id)
 article1_url = "https://www.brasilcode.com.br/wp-content/uploads/2023/04/CRUD.webp"
