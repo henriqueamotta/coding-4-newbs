@@ -130,6 +130,10 @@ Article.create!(name: "Trabalhando com Active Record", term_id: term_1.id)
 # Content: "Rails utiliza Ruby para oferecer uma abordagem centrada no desenvolvedor, simplificando tarefas complexas e acelerando o desenvolvimento."
 # Term: Ruby
 
+# Article.create!(name: "Javascript", term_id: term_1.id)
+# Article.create!(name: "Rails", term_id: term_1.id)
+# Article.create!(name: "CSS", term_id: term_1.id)
+# Article.create!(name: "HTML", term_id: term_1.id)
 
 
 

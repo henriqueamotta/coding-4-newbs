@@ -1,7 +1,7 @@
 .term-show-page {
   padding: 30px;
   color: $gainsboro;
-  text-align: center;
+  align-items: center;
 
   .header {
     margin-bottom: 30px;
@@ -52,4 +52,21 @@
       }
     }
   }
+}
+
+.content-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 80vh;
+}
+
+
+html,
+body {
+  height: 100%; /* Garante que o corpo ocupe 100% do viewport */
+  margin: 0; /* Remove margens padrão */
+  display: flex;
+  flex-direction: column; /* Alinha os elementos em coluna */
 }
