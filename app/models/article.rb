@@ -1,6 +1,14 @@
 class Article < ApplicationRecord
+  # require "open-uri"
+  has_one_attached :photo
+
   belongs_to :term
-  after_save :set_content, if: -> { saved_change_to_name? }
+  # after_save :set_content, if: -> { saved_change_to_name? }
+
+  after_save if: -> { saved_change_to_name? } do
+    set_content
+    # set_photo
+  end
 
   def content
     if super.blank?
@@ -27,4 +35,17 @@ class Article < ApplicationRecord
     return new_content
   end
 
+  # def set_photo
+  #   client = OpenAI::Client.new
+  #   response = client.images.generate(parameters: {
+  #     prompt: "Imagem relacionada a #{name}. Dê preferência a imagens de código escrito, telas de computador, teclados, prompts. Sem mostrar partes humanas, sem inventar letras.", size: "256x256"
+  #   })
+
+  #   url = response["data"][0]["url"]
+  #   file =  URI.parse(url).open
+
+  #   photo.purge if photo.attached?
+  #   photo.attach(io: file, filename: "ai_generated_image.jpg", content_type: "image/png")
+  #   return photo
+  # end
 end

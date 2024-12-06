@@ -53,6 +53,7 @@ gem "sassc-rails"
 gem "pundit"
 gem "ruby-openai"
 gem "redcarpet"
+gem "cloudinary"
 
 group :development, :test do
   gem "dotenv-rails"

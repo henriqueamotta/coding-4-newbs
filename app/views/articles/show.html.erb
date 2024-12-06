@@ -17,7 +17,7 @@
 
   <!-- Imagem em destaque -->
   <div class="image">
-    <%= image_tag(asset_path("code.jpg"), alt: @article.name) %>
+    <%= cl_image_tag @article.photo.key, alt: "AI-generated image of the article" if @article.photo.attached? %>
   </div>
 
   <!-- Conteúdo completo do artigo -->
