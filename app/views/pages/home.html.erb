@@ -3,14 +3,15 @@
     <%= image_tag "Logo.png", alt: "Coding 4 Newbs Logo", class: "logo" %>
   </div>
   <h5 class="text-lime">Search on C4N:</h5>
-  <div class="search-bar mt-3">
-    <input
-    type="text"
-    class="form-control"
-    id="search-input"
-    placeholder="Type here..."
-    />
+
+   <div class="search-bar terms-page">
+    <form action="<%= terms_path %>" method="get">
+      <input type="text" name="query" placeholder="Search..." class="search-input" />
+    </form>
   </div>
+  <%# <div class="search-bar mt-3">
+    <input type="text" class="form-control" id="search-input" placeholder="Type here..."/>
+  </div> %>
   <div class="popular-searches mt-5">
     <h5 class="text-lime">Most Popular:</h5>
   </div>
