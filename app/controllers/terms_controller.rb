@@ -15,6 +15,10 @@ class TermsController < ApplicationController
     authorize @term
     markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML.new(render_options = {}))
     @description_html = markdown.render(@term.description).html_safe
+
+    @related_articles = Article.where("name ILIKE ? OR content ILIKE ?", "%#{@term.name}%", "%#{@term.name}%")
+                               .order(created_at: :desc)
+                               .limit(5)
   end
 
   def new
