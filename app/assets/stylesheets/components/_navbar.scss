@@ -1,8 +1,8 @@
 // Paleta de cores
-$navbar-bg: $black; // Fundo da navbar
-$link-color: $gainsboro; // Cor do texto dos links
-$link-active-shadow: $lime; // Sombra lime para link ativo
-$navbar-shadow: $palatine-purple; // Sombra da navbar
+$navbar-bg: $secondary; // Fundo da navbar
+$link-color: $primary; // Cor do texto dos links
+$link-active-shadow: $highlight; // Sombra lime para link ativo
+$navbar-shadow: $tertiary; // Sombra da navbar
 
 // Navbar
 .navbar {
@@ -31,7 +31,7 @@ $navbar-shadow: $palatine-purple; // Sombra da navbar
         height: 30px;
         text-decoration: none;
         color: $link-color;
-        background-color: $persian-indigo;
+        background-color: $tertiary;
         padding: 5px 12px;
         border-radius: 10px;
         text-align: center;
@@ -57,7 +57,7 @@ $navbar-shadow: $palatine-purple; // Sombra da navbar
     }
 
     .avatar {
-      color: $lime;
+      color: $tertiary;
       font-size: 1.5rem;
       padding: 5px;
       margin-left: 10px;

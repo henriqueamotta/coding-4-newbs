@@ -7,16 +7,20 @@
     margin-bottom: 30px;
 
     h2 {
+      font-family: $body-font;
       font-size: 2.5rem;
-      color: $gainsboro;
-      text-shadow: 0 4px 4px $black, 0 4px 4px $lime;
-      margin-bottom: 20px;
+      color: transparent;
+      background: linear-gradient(90deg, #4cb5f1, #02609e, $tertiary);
+      -webkit-background-clip: text;
+      -webkit-text-stroke: 2px #015bb0;
+      background-clip: text;
+      text-shadow: 0 2px 4px rgba(51, 147, 226, 0.836), 0 4px 6px rgba(255, 255, 255, 0.726), 0px -2px 5px rgba(69, 168, 224, 0.7);
     }
   }
 
   .description-container {
     background: $gainsboro;
-    color: $nero;
+    color: $secondary;
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
@@ -43,11 +47,11 @@
     }
 
     .btn-back {
-      background: $persian-indigo;
-      color: $lime;
+      background: $secondary;
+      color: $highlight;
 
       &:hover {
-        background: lighten($persian-indigo, 10%);
+        background: lighten($secondary, 10%);
         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
       }
     }
