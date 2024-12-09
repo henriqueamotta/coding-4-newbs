@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_12_06_145904) do
+ActiveRecord::Schema[7.1].define(version: 2024_12_09_143036) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -51,6 +51,27 @@ ActiveRecord::Schema[7.1].define(version: 2024_12_06_145904) do
     t.index ["term_id"], name: "index_articles_on_term_id"
   end
 
+  create_table "forums", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.bigint "user_id", null: false
+    t.bigint "article_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["article_id"], name: "index_forums_on_article_id"
+    t.index ["user_id"], name: "index_forums_on_user_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.text "content"
+    t.bigint "user_id", null: false
+    t.bigint "forum_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["forum_id"], name: "index_messages_on_forum_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
   create_table "terms", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -74,4 +95,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_12_06_145904) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "articles", "terms"
+  add_foreign_key "forums", "articles"
+  add_foreign_key "forums", "users"
+  add_foreign_key "messages", "forums"
+  add_foreign_key "messages", "users"
 end
