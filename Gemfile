@@ -54,6 +54,8 @@ gem "pundit"
 gem "ruby-openai"
 gem "redcarpet"
 gem "cloudinary"
+gem "solid_cable"
+gem "solid_queue"
 
 group :development, :test do
   gem "dotenv-rails"
