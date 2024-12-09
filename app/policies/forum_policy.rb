@@ -5,15 +5,22 @@ class ForumPolicy < ApplicationPolicy
   end
 
   def create?
-    user.present? 
+    user.present?
   end
 
+  def show?
+    true
+  end
+
+  def destroy?
+    user.present? && (user.admin? || record.user == user)
+  end
 
   class Scope < ApplicationPolicy::Scope
 
     def resolve
       scope.all
     end
-    
+
   end
 end
