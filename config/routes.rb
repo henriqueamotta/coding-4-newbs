@@ -7,9 +7,11 @@ Rails.application.routes.draw do
     resources :forums,  only: [:new, :create]
   end
   
-  resources :forums, only: [:show] do
+  resources :forums, only: [:show, :destroy] do
     resources :messages, only: [:create]
   end
+
+  resources :messages, only: [:destroy]
 
 
   #get "up" => "rails/health#show", as: :rails_health_check
