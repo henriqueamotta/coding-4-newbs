@@ -1,5 +1,5 @@
 class Term < ApplicationRecord
-  has_many :article
+  has_many :articles
   after_save :set_description, if: -> { saved_change_to_name? }
 
   validates :name, presence: true
