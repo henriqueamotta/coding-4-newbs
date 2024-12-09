@@ -1,6 +1,7 @@
 class Article < ApplicationRecord
   # require "open-uri"
   has_one_attached :photo
+  has_many :forums, dependent: :destroy
 
   belongs_to :term
   # after_save :set_content, if: -> { saved_change_to_name? }

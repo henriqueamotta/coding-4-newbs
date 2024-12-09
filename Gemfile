@@ -3,7 +3,7 @@ source "https://rubygems.org"
 ruby "3.3.5"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem "rails", "~> 7.1.5"
+gem "rails", "~> 7.2.2"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
@@ -54,6 +54,8 @@ gem "pundit"
 gem "ruby-openai"
 gem "redcarpet"
 gem "cloudinary"
+gem "solid_cable"
+gem "solid_queue"
 
 group :development, :test do
   gem "dotenv-rails"
