@@ -17,5 +17,8 @@ Rails.application.routes.draw do
   # Rotas para Terms
   resources :terms
 
+  # Rotas para Questions
+  resources :questions, only: [:index, :create]
+
 
 end
