@@ -3,7 +3,13 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   # Rotas para Articles
-  resources :articles
+  resources :articles do
+    resources :forums,  only: [:new, :create]
+  end
+  
+  resources :forums, only: [:show] do
+    resources :messages, only: [:create]
+  end
 
 
   #get "up" => "rails/health#show", as: :rails_health_check
