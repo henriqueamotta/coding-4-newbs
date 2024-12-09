@@ -74,3 +74,49 @@ body {
   display: flex;
   flex-direction: column; /* Alinha os elementos em coluna */
 }
+
+.related-articles {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: $gainsboro;
+  border: 1px solid $tertiary;
+  border-radius: 8px;
+}
+
+.related-articles h3 {
+  font-family: $body-font;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  color: $secondary;
+}
+
+.related-articles .article-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.related-articles .article-item {
+  margin-bottom: 20px;
+}
+
+.related-articles p {
+  color: $secondary;
+}
+
+.related-articles .article-link {
+  font-family: $body-font;
+  font-weight: bold;
+  color: $tertiary;
+  text-decoration: none;
+}
+
+.related-articles .article-link:hover {
+  text-decoration: underline;
+}
+
+.related-articles p {
+  margin: 5px 0 0;
+  color: #555;
+}

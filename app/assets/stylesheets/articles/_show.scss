@@ -76,6 +76,10 @@
     color: $secondary;
   }
 
+  h1, h3, h2 {
+    font-family: $body-font;
+  }
+
   .back-to-top {
     position: fixed;
     bottom: 20px;
