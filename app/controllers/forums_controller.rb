@@ -1,6 +1,6 @@
 class ForumsController < ApplicationController
     before_action :set_article, only: [:new, :create]
-    before_action :set_forum, only: [:show, :destroy]
+    before_action :set_forum, only: [:show, :destroy,]
 
 
    
@@ -24,7 +24,11 @@ class ForumsController < ApplicationController
     end
   end
 
-  
+  def index
+    @forums = policy_scope(Forum) 
+  end
+
+
   def show
     authorize @forum
     @messages = @forum.messages.order(created_at: :asc) 

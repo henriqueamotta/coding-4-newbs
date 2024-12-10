@@ -1,0 +1,16 @@
+<h1>Todos os Fóruns</h1>
+
+<% if @forums.any? %>
+  <ul>
+    <% @forums.each do |forum| %>
+      <li>
+        <strong><%= link_to forum.title, forum_path(forum) %></strong>
+        <p><%= forum.content.truncate(100) %></p>
+        <p>Autor: <%= forum.user.email.match(/([^@]+)@/)[1] %></p>
+        <p>Artigo relacionado: <%= link_to forum.article.name, article_path(forum.article) %></p>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>Nenhum fórum foi criado ainda.</p>
+<% end %>
