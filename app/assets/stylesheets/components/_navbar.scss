@@ -55,16 +55,18 @@ $navbar-shadow: $orange; // Sombra da navbar
       }
     }
 
-    .avatar {
-      color: $tertiary;
+    .nav-item .avatar {
+      color: $green;
+      background: none;
       font-size: 1.5rem;
-      padding: 5px;
+      padding: 0;
       margin-left: 10px;
-      border-radius: 50%;
+      border: none;
       display: inline-block;
-      vertical-align: middle;
-      align-items: center;
+      vertical-align: left;
+      align-items: flex-end;
       justify-content: center;
+      cursor: pointer;
 
       &:hover {
         transform: scale(1.1);
