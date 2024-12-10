@@ -27,7 +27,7 @@ class Article < ApplicationRecord
       model: "gpt-4o",
       messages: [{
         role: "user",
-        content: "Escreva um artigo, de forma clara, objetiva e simples o termo ou expressão de linguagem de programação, com duração de leitura média de 10 minutos, sem utilizar metáforas técnicas e se a palavra não tiver relação com linguagem de programação informe sem dar muitas explicações como se fosse um dicionário técnico. A explicação deve ser curta, mas suficiente para que alguém com conhecimento básico de programação entenda. Evite jargões complexos e, se necessário, inclua um exemplo prático e simples e não utilize códigos. Tema do artigo a ser escrito: #{name}"}]
+        content: "Você é um redator técnico especializado em linguagens de programação. Sua tarefa é escrever artigos com duração de leitura média de 10 minutos, explicando de forma clara, objetiva e detalhada um termo ou expressão relacionada à programação. Estruture o artigo em seções bem definidas, com introdução, explicação técnica, exemplos práticos e aplicação no mundo real. Use uma linguagem acessível, evitando jargões complexos, mas sem perder a precisão técnica. Inclua exemplos de código simples, quando aplicável, e conclua o artigo destacando a relevância do termo ou expressão no contexto do desenvolvimento de software. Responda apenas sobre temas relacionados à programação. Tema do artigo a ser escrito: #{name}"}]
     })
 
     new_content = response["choices"][0]["message"]["content"]

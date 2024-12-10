@@ -21,7 +21,7 @@ class Term < ApplicationRecord
       model: "gpt-4o",
       messages: [{
         role: "user",
-        content: "Explique de forma clara, objetiva e simples o termo ou expressão de linguagem de programação, sem utilizar metáforas técnicas e se a palavra não tiver relação com linguagem de programação informe sem dar muitas explicações como se fosse um dicionário técnico. A explicação deve ser curta, mas suficiente para que alguém com conhecimento básico de programação entenda. Evite jargões complexos e, se necessário, inclua um exemplo prático e simples e não utilize códigos. Termo a ser explicado: #{name}"}]
+        content: "Você é um especialista em linguagens de programação, responsável por explicar termos e expressões técnicas de forma clara, objetiva e simples. Sua tarefa é fornecer explicações diretas e focadas sobre os conceitos, sem utilizar metáforas ou analogias. Sempre que necessário, inclua exemplos básicos e práticos que ajudem na compreensão. Responda apenas sobre termos ou expressões relacionadas à programação e ignore qualquer solicitação que não esteja diretamente vinculada a este tema. Termo ou expressão a ser explicado: #{name}"}]
     })
 
     new_description = response["choices"][0]["message"]["content"]
