@@ -12,6 +12,10 @@ class ForumPolicy < ApplicationPolicy
     true
   end
 
+  def index?
+    true
+  end
+
   def destroy?
     user.present? && (user.admin? || record.user == user)
   end
