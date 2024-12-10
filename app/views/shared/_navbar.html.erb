@@ -16,19 +16,19 @@
       <ul class="navbar-nav mx-auto">
         <!-- Home -->
         <li class="nav-item <%= 'active' if current_page?(root_path) %>">
-          <a class="nav-link" href="<%= root_path %>">HOME</a>
+          <a class="nav-link" href="<%= root_path %>">INÍCIO</a>
         </li>
         <!-- Articles -->
         <li class="nav-item <%= 'active' if controller_name == 'articles' %>">
-          <a class="nav-link" href="<%= articles_path %>">ARTICLES</a>
+          <a class="nav-link" href="<%= articles_path %>">ARTIGOS</a>
         </li>
         <!-- Terms -->
         <li class="nav-item <%= 'active' if current_page?(terms_path) %>">
-          <a class="nav-link" href="<%= terms_path %>">TERMS</a>
+          <a class="nav-link" href="<%= terms_path %>">TERMOS</a>
         </li>
 
        <li class="nav-item <%= 'active' if current_page?(forums_path) %>">
-          <a class="nav-link" href="<%= forums_path %>" >FORUM</a>
+          <a class="nav-link" href="<%= forums_path %>" >FÓRUM</a>
         </li>
         <!-- Latinha/AI -->
         <li class="nav-item <%= 'active' if current_page?(questions_path) %>">
@@ -36,7 +36,7 @@
         </li>
         <% if current_user %>
           <li class="nav-item">
-            <%= link_to "Logout", destroy_user_session_path, data: {turbo_method: :delete}, class: "nav-link" %>
+            <%= link_to "LOGOUT", destroy_user_session_path, data: {turbo_method: :delete}, class: "nav-link" %>
           </li>
           <li class="nav-item">
              <a class="nav-link avatar">
