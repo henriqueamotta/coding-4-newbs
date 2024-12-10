@@ -4,10 +4,10 @@ Rails.application.routes.draw do
 
   # Rotas para Articles
   resources :articles do
-    resources :forums,  only: [:new, :create]
+    resources :forums,  only: [:new, :create,]
   end
   
-  resources :forums, only: [:show, :destroy] do
+  resources :forums, only: [:show, :index, :destroy] do
     resources :messages, only: [:create]
   end
 

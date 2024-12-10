@@ -27,8 +27,8 @@
           <a class="nav-link" href="<%= terms_path %>">TERMS</a>
         </li>
 
-       <li class="nav-item">
-          <a class="nav-link special-button" href="#">FORUM</a>
+       <li class="nav-item <%= 'active' if current_page?(forums_path) %>">
+          <a class="nav-link" href="<%= forums_path %>" >FORUM</a>
         </li>
         <!-- Latinha/AI -->
         <li class="nav-item <%= 'active' if current_page?(questions_path) %>">
@@ -36,12 +36,12 @@
         </li>
         <% if current_user %>
           <li class="nav-item">
-            <a class="nav-link avatar">
-              <i class="fas fa-user-circle"></i>
-            </a>
+            <%= link_to "Logout", destroy_user_session_path, data: {turbo_method: :delete}, class: "nav-link" %>
           </li>
           <li class="nav-item">
-          <%= link_to "Logout", destroy_user_session_path, data: {turbo_method: :delete}, class: "nav-link" %>
+             <a class="nav-link avatar">
+              <i class="fas fa-user-circle"></i>
+            </a>
           </li>
         <% else %>
           <li class="nav-item">

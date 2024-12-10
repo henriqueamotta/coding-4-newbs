@@ -3,21 +3,21 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: $persian-indigo;
-  color: $gainsboro;
+  background-color: $blue-dark;
+  color: $light-blue;
   height: 100vh;
 
   .logo-container {
     .logo {
-      width: 500px;
+      width: 350px;
       height: auto;
       margin-bottom: 20px;
     }
   }
 
   .text-lime {
-    color: $lime;
-    -webkit-text-stroke: 1.1px $midnight-express;
+    color: $blue-highlight-two;
+    -webkit-text-stroke: 1px $green;
 
   }
 
@@ -26,16 +26,16 @@
     max-width: 600px;
 
     input {
-    border: 2px solid $midnight-express;
+    border: 2px solid $blue-dark;
     background-color: $gainsboro;
-    color: $nero;
-    box-shadow: 0 4px 15px $lime;
+    color: $blue-dark;
+    box-shadow: 0 4px 15px $yellow;
     border-radius: 20px;
     padding: 10px;
 
 
     &::placeholder {
-      color: $nero;
+      color: $blue-dark;
       opacity: 0.7;
     }
 
@@ -43,5 +43,56 @@
       outline: none;
     }
   }
+  }
+}
+
+.logo-container {
+  .logo-wrapper {
+    position: relative;
+
+    .logo {
+      width: 350px;
+      height: auto;
+      margin-bottom: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .logo:hover {
+      transform: scale(1.05); /* Faz o logo "crescer" levemente no hover */
+    }
+
+    .speech-bubble {
+      position: absolute;
+      top: -15%;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: $gainsboro;
+      color: $blue-dark;
+      padding: 10px 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 10px 10px 0 10px;
+        border-color: $gainsboro transparent transparent transparent;
+      }
+    }
+
+    &:hover .speech-bubble {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(-10px);
+    }
   }
 }

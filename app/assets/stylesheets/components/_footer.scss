@@ -14,31 +14,47 @@ html, body {
 
 .footer {
   margin: 0;
-  background: $black;
+  background: $blue-dark;
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 100px;
   padding: 0px 50px;
-  color: $lime;
+  color: $light-blue;
+  box-shadow: inset 0px 4px $orange;
 }
 .footer-links {
   display: flex;
   align-items: center;
 }
 .footer-links a {
-  color: $gainsboro;
-  opacity: 0.15;
+  color: $light-blue;
   text-decoration: none;
   font-size: 11px;
   padding: 0px 10px;
 }
 .footer-links a:hover {
-  opacity: 1;
+  opacity: 0.5;
 }
 
 .footer-links i {
-  color: $lime;
+  color: $light-blue;
   font-size: 24px;
   margin-left: 5px;
+}
+
+.footer-links .git-bia i {
+  color: $green;
+}
+
+.footer-links .git-douglas i {
+  color: $sky_blue;
+}
+
+.footer-links .git-henrique i {
+  color: $orange;
+}
+
+.footer-links .git-yan i {
+  color: $hot-pink;
 }

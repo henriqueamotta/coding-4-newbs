@@ -16,11 +16,11 @@
       font-family: $headers-font;
       font-size: 3rem;
       color: transparent;
-      background: linear-gradient(90deg, #019fb0, #02e3c9, $lime);
+      background: linear-gradient(90deg, #ffc600, #36c90f, #ff0088);
       -webkit-background-clip: text;
-      -webkit-text-stroke: 2px #019fb0;
+      -webkit-text-stroke: 2px $yellow;
       background-clip: text;
-      text-shadow: 0 2px 4px rgba(4, 233, 0, 0.836), 0 4px 6px rgba(255, 255, 255, 0.726), 0px -2px 5px rgba(2, 227, 201, 0.7);
+      text-shadow: 0 2px 4px rgba(255, 102, 0, 0.836), 0 4px 6px rgba(255, 0, 136, 0.726), 0px -2px 5px rgba(255, 198, 0, 0.7);
       position: relative;
     }
     h1::after {
@@ -31,14 +31,14 @@
       transform: translateX(-50%);
       width: 400px;
       height: 4px;
-      background: linear-gradient(90deg, $gainsboro, $lime);
+      background: linear-gradient(90deg, $green, $sky_blue);
     }
 
     i {
       font-size: 3rem;
       color: $gainsboro;
       margin-bottom: 10px;
-      text-shadow: 0 4px 4px $black;
+      text-shadow: 0 4px 4px $hot-pink;
     }
   }
 
@@ -63,10 +63,10 @@
   .search-input {
     width: 100%;
     max-width: none;
-    border: 2px solid $midnight-express;
+    border: 2px solid $blue-dark;
     background-color: $gainsboro;
-    color: $nero;
-    box-shadow: 0 4px 15px $lime;
+    color: $primary;
+    box-shadow: 0 4px 15px $yellow;
     border-radius: 20px;
     padding: 10px 20px 10px 45px;
     outline: none;
@@ -80,8 +80,8 @@
     max-width: 600px;
     background: $gainsboro;
     border-radius: 15px;
-    box-shadow: 0 4px 15px $lime;
-    border: 2px solid $lime;
+    box-shadow: 0 4px 15px $yellow;
+    border: 2px solid $blue-dark;
     overflow-y: auto; /* Scroll caso os itens ultrapassem a altura */
     max-height: 500px; /* Altura máxima para ativar o scroll */
 
@@ -93,17 +93,17 @@
     }
 
     &::-webkit-scrollbar-thumb {
-      background-color: $lime; /* Cor da parte que desliza */
+      background-color: $blue-dark; /* Cor da parte que desliza */
       border-radius: 25px; /* Deixa arredondado */
-      border: 2px solid $persian-indigo; /* Contorno da parte que desliza */
+      border: 2px solid $blue-dark; /* Contorno da parte que desliza */
     }
 
     &::-webkit-scrollbar-thumb:hover {
-      background-color: lighten($lime, 10%); /* Cor mais clara ao passar o mouse */
+      background-color: lighten($sky_blue, 10%); /* Cor mais clara ao passar o mouse */
     }
 
     &::-webkit-scrollbar-track {
-      background-color: darken($persian-indigo, 10%); /* Fundo do track */
+      background-color: darken($blue-dark, 10%); /* Fundo do track */
       border-radius: 25px; /* Arredondamento do track */
       margin: 50px;
     }
@@ -120,8 +120,8 @@
     text-align: center;
     width: 100%;
     padding: 15px;
-    background: $persian-indigo;
-    color: $gainsboro;
+    background: $blue-highlight;
+    color: $light-blue;
     border-radius: 10px;
     text-decoration: none;
     font-weight: bold;
@@ -129,7 +129,7 @@
     transition: all 0.3s;
 
     &:hover {
-      background: lighten($persian-indigo, 10%);
+      background: lighten($blue-highlight-two, 10%);
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
     }
   }

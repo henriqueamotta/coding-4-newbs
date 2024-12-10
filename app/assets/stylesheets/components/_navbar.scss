@@ -1,13 +1,12 @@
 // Paleta de cores
-$navbar-bg: $black; // Fundo da navbar
-$link-color: $gainsboro; // Cor do texto dos links
-$link-active-shadow: $lime; // Sombra lime para link ativo
-$navbar-shadow: $palatine-purple; // Sombra da navbar
+$navbar-bg: $blue-dark; // Fundo da navbar
+$link-color: $blue-dark; // Cor do texto dos links
+$link-active-shadow: $green; // Sombra para link ativo
+$navbar-shadow: $orange; // Sombra da navbar
 
 // Navbar
 .navbar {
   background-color: $navbar-bg;
-  box-shadow: 0px 4px 4px $navbar-shadow;
   padding: 10px 0px;
 
   .navbar-nav {
@@ -31,7 +30,7 @@ $navbar-shadow: $palatine-purple; // Sombra da navbar
         height: 30px;
         text-decoration: none;
         color: $link-color;
-        background-color: $persian-indigo;
+        background-color: $light-blue;
         padding: 5px 12px;
         border-radius: 10px;
         text-align: center;
@@ -56,16 +55,18 @@ $navbar-shadow: $palatine-purple; // Sombra da navbar
       }
     }
 
-    .avatar {
-      color: $lime;
+    .nav-item .avatar {
+      color: $green;
+      background: none;
       font-size: 1.5rem;
-      padding: 5px;
+      padding: 0;
       margin-left: 10px;
-      border-radius: 50%;
+      border: none;
       display: inline-block;
-      vertical-align: middle;
-      align-items: center;
+      vertical-align: left;
+      align-items: flex-end;
       justify-content: center;
+      cursor: pointer;
 
       &:hover {
         transform: scale(1.1);
