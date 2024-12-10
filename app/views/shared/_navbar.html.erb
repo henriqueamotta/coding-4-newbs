@@ -30,14 +30,9 @@
        <li class="nav-item">
           <a class="nav-link special-button" href="#">FORUM</a>
         </li>
-        <!-- AI (desativado) -->
-        <li class="nav-item">
-          <a
-            class="nav-link disabled"
-            href="#"
-            tabindex="-1"
-            aria-disabled="true"
-          >AI</a>
+        <!-- Latinha/AI -->
+        <li class="nav-item <%= 'active' if current_page?(questions_path) %>">
+          <a class="nav-link" href="<%= questions_path %>">LATINHA</a>
         </li>
         <% if current_user %>
           <li class="nav-item">
