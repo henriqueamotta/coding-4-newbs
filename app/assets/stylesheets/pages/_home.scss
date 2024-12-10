@@ -3,21 +3,21 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: $secondary;
-  color: $tertiary;
+  background-color: $blue-dark;
+  color: $light-blue;
   height: 100vh;
 
   .logo-container {
     .logo {
-      width: 500px;
+      width: 350px;
       height: auto;
       margin-bottom: 20px;
     }
   }
 
   .text-lime {
-    color: $tertiary;
-    -webkit-text-stroke: 1px $secondary;
+    color: $blue-highlight-two;
+    -webkit-text-stroke: 1px $green;
 
   }
 
@@ -26,16 +26,16 @@
     max-width: 600px;
 
     input {
-    border: 2px solid $secondary;
+    border: 2px solid $blue-dark;
     background-color: $gainsboro;
-    color: $secondary;
-    box-shadow: 0 4px 15px $secondary;
+    color: $blue-dark;
+    box-shadow: 0 4px 15px $yellow;
     border-radius: 20px;
     padding: 10px;
 
 
     &::placeholder {
-      color: $secondary;
+      color: $blue-dark;
       opacity: 0.7;
     }
 

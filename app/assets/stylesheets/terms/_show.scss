@@ -10,20 +10,20 @@
       font-family: $body-font;
       font-size: 2.5rem;
       color: transparent;
-      background: linear-gradient(90deg, #4cb5f1, #02609e, $tertiary);
+      background: linear-gradient(90deg, #ffc600, #36c90f, #ff0088);
       -webkit-background-clip: text;
-      -webkit-text-stroke: 2px #015bb0;
+      -webkit-text-stroke: 2px $yellow;
       background-clip: text;
-      text-shadow: 0 2px 4px rgba(51, 147, 226, 0.836), 0 4px 6px rgba(255, 255, 255, 0.726), 0px -2px 5px rgba(69, 168, 224, 0.7);
+      text-shadow: 0 2px 4px rgba(255, 102, 0, 0.836), 0 4px 6px rgba(255, 0, 136, 0.726), 0px -2px 5px rgba(255, 198, 0, 0.7);
     }
   }
 
   .description-container {
     background: $gainsboro;
-    color: $secondary;
+    color: $blue-highlight;
     padding: 20px;
     border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.658);
     max-width: 800px;
     margin: 0 auto 30px auto;
 
@@ -47,12 +47,12 @@
     }
 
     .btn-back {
-      background: $secondary;
-      color: $highlight;
+      background: $light-blue;
+      color: $blue-dark;
 
       &:hover {
-        background: lighten($secondary, 10%);
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+        transform: translateY(-2px);
+        box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.5);
       }
     }
   }
@@ -80,15 +80,16 @@ body {
   margin-bottom: 30px;
   padding: 20px;
   background-color: $gainsboro;
-  border: 1px solid $tertiary;
+  border: 1px solid $blue-dark;
   border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.658);
 }
 
 .related-articles h3 {
   font-family: $body-font;
   margin-bottom: 15px;
   font-size: 1.5rem;
-  color: $secondary;
+  color: $hot-pink;
 }
 
 .related-articles .article-list {
@@ -101,15 +102,12 @@ body {
   margin-bottom: 20px;
 }
 
-.related-articles p {
-  color: $secondary;
-}
-
 .related-articles .article-link {
   font-family: $body-font;
   font-weight: bold;
-  color: $tertiary;
+  color: $yellow;
   text-decoration: none;
+  text-shadow: 0 2px 4px rgba(255, 102, 0, 0.836), 0 4px 6px rgba(255, 0, 136, 0.726), 0px -2px 5px rgba(255, 198, 0, 0.7);
 }
 
 .related-articles .article-link:hover {
@@ -118,5 +116,5 @@ body {
 
 .related-articles p {
   margin: 5px 0 0;
-  color: #555;
+  color: $green;
 }
