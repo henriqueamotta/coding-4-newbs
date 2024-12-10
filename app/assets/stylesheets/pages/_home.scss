@@ -3,21 +3,21 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: $persian-indigo;
-  color: $gainsboro;
+  background-color: $blue-dark;
+  color: $light-blue;
   height: 100vh;
 
   .logo-container {
     .logo {
-      width: 500px;
+      width: 350px;
       height: auto;
       margin-bottom: 20px;
     }
   }
 
   .text-lime {
-    color: $lime;
-    -webkit-text-stroke: 1.1px $midnight-express;
+    color: $blue-highlight-two;
+    -webkit-text-stroke: 1px $green;
 
   }
 
@@ -26,16 +26,16 @@
     max-width: 600px;
 
     input {
-    border: 2px solid $midnight-express;
+    border: 2px solid $blue-dark;
     background-color: $gainsboro;
-    color: $nero;
-    box-shadow: 0 4px 15px $lime;
+    color: $blue-dark;
+    box-shadow: 0 4px 15px $yellow;
     border-radius: 20px;
     padding: 10px;
 
 
     &::placeholder {
-      color: $nero;
+      color: $blue-dark;
       opacity: 0.7;
     }
 

@@ -2,6 +2,7 @@
   padding: 20px;
   color: $gainsboro;
   position: relative;
+  font-family: $body-font;
 
   .author-section {
     display: flex;
@@ -10,21 +11,21 @@
 
     .avatar {
       font-size: 3rem;
-      color: $lime;
+      color: $light-blue;
       margin-right: 20px;
     }
 
     .author-info {
       h6 {
-        font-family: $headers-font;
+        font-family: $body-font;
         font-size: 15px;
-        color: $lime;
+        color: $yellow;
         margin: 0;
       }
 
       p {
         font-family: $subtitle-font;
-        color: lighten($gainsboro, 20%);
+        color: $hot-pink;
         font-size: 15px;
         margin: 0;
       }
@@ -36,15 +37,20 @@
     margin-bottom: 20px;
 
     h1 {
-      font-family: $headers-font;
-      color: $gainsboro;
-      text-shadow: 0 4px 4px $black, 0 4px 4px $lime;
+      font-family: $body-font;
+      font-size: 2.5rem;
+      color: transparent;
+      background: linear-gradient(90deg, #ffc600, #36c90f, #ff0088);
+      -webkit-background-clip: text;
+      -webkit-text-stroke: 2px $yellow;
+      background-clip: text;
+      text-shadow: 0 2px 4px rgba(255, 102, 0, 0.836), 0 4px 6px rgba(255, 0, 136, 0.726), 0px -2px 5px rgba(255, 198, 0, 0.7);
     }
   }
 
     .subtitle {
       font-size: 15px;
-      color: lighten($lime, 20%);
+      color: lighten($highlight, 20%);
       margin-top: 10px;
     }
 
@@ -62,11 +68,18 @@
   }
 
   .content {
+    font-family: $body-font;
     margin-top: 20px;
     font-size: 1rem;
     line-height: 1.6;
     text-align: justify;
-    color: lighten($gainsboro, 20%);
+    color: $green;
+  }
+
+  h1, h3, h2 {
+    font-family: $body-font;
+    color: $yellow;
+    text-shadow: 0 4px 4px $orange, 0 4px 4px $hot-pink;
   }
 
   .back-to-top {
@@ -81,18 +94,18 @@
       justify-content: center;
       width: 50px;
       height: 50px;
-      background-color: $lime;
+      background-color: $light-blue;
       border-radius: 50%;
       box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
       text-decoration: none;
 
       i {
-        color: $black;
+        color: $blue-dark;
         font-size: 1.5rem;
       }
 
       &:hover {
-        background-color: lighten($lime, 10%);
+        background-color: lighten($tertiary, 10%);
         box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.5);
       }
     }
@@ -106,12 +119,12 @@
   }
 
   .btn-back {
-    background: $persian-indigo;
-    color: $lime;
+    background: $light-blue;
+    color: $blue-dark;
 
     &:hover {
-      background: lighten($persian-indigo, 10%);
-      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+      transform: translateY(-2px);
+      box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.5);
     }
   }
 }
