@@ -11,7 +11,18 @@ class ArticlesController < ApplicationController
     @featured_article = @articles.order(created_at: :desc).first
 
     # Outros artigos excluindo o destaque
+
+    if @featured_article
+      markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML.new(render_options = {}))
+      @featured_article_content_html = markdown.render(@featured_article.content).html_safe
+    end
+
     @articles = @articles.where.not(id: @featured_article.id) if @featured_article
+
+    @articles.each do |article|
+      markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML.new(render_options = {}))
+      @article_content_html = markdown.render(article.content).html_safe
+    end
   end
 
   def show

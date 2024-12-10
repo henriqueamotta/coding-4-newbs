@@ -22,7 +22,7 @@
 
   <!-- Conteúdo completo do artigo -->
   <div class="content">
-    <p><%= simple_format(@content_html) %></p>
+    <p><%= @content_html %></p>
   </div>
 
   <!-- Botão para voltar ao topo -->
@@ -36,7 +36,7 @@
   </div>
 </div>
 <div class="actions">
-<%= link_to 'novo Forum', new_article_forum_path(article_id: @article.id)  %>
+<%= link_to 'New Forum', new_article_forum_path(article_id: @article.id)  %>
 </div>
 <%@article.forums.each do |forum|  %>
 <%= link_to forum.title, forum_path(forum) %>
