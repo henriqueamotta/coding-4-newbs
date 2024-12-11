@@ -50,7 +50,7 @@
 
     .subtitle {
       font-size: 15px;
-      color: lighten($highlight, 20%);
+      color: lighten($blue-highlight, 20%);
       margin-top: 10px;
     }
 
@@ -105,7 +105,7 @@
       }
 
       &:hover {
-        background-color: lighten($tertiary, 10%);
+        background-color: lighten($blue-highlight, 10%);
         box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.5);
       }
     }
