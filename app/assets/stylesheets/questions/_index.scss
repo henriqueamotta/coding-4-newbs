@@ -1,0 +1,173 @@
+.chat-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .chat-logo {
+    width: auto;
+    height: 100px;
+    display: block;
+    margin: 0 auto;
+    padding: 5px;
+  }
+}
+
+
+// **Estilo geral do contêiner do chat**
+.container.chatbot {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: $blue-dark;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px $hot-pink,
+              0 -4px 10px black,
+              -4px 0 8px $hot-pink,
+              -4px 0 10px black,
+              0 -4px 8px $hot-pink,
+              inset 4px 4px 8px $blue-highlight-two;
+  border: 2px solid $green;
+  overflow: hidden;
+}
+
+// **Estilo do título do chat**
+.container.chatbot h1 {
+  font-size: 24px;
+  color: $yellow;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+// **Área de mensagens**
+#questions {
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  gap: 10px;
+  max-height: 400px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 10px;
+  background-color: $light-blue;
+  resize: none;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+    background-color: transparent;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-radius: 10px;
+
+  }
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-radius: 15px;
+  }
+
+  &::-webkit-scrollbar-corner {
+    background-color: $light-blue;
+    border-radius: 30px;
+}
+}
+
+// **Balões de mensagens**
+.message {
+  margin-bottom: 12px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  max-width: 70%; // Largura máxima de cada mensagem
+  word-wrap: break-word; // Quebra palavras longas
+}
+
+/* Balão de mensagem para perguntas do usuário */
+.user-question {
+  background-color: $blue-dark;
+  color: $gainsboro;
+  align-self: flex-end;
+  text-align: left;
+}
+
+/* Balão de mensagem para respostas da IA */
+.ai-answer {
+  background-color: $light-blue;
+  color: $blue-dark;
+  align-self: flex-start;
+  text-align: left;
+}
+
+// **Área do formulário**
+.input-group {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+}
+
+/* Caixa de texto */
+.chat-input {
+  height: auto;
+  max-height: 200px;
+  background-color: $blue-dark;
+  color: $gainsboro !important;
+  border: 1px solid $green;
+  box-shadow: inset $blue-highlight-two 0 0 15px;
+  padding: 10px;
+  resize: none;
+  overflow-y: auto;
+  white-space: normal;
+  word-break: break-word;
+  box-sizing: border-box;
+
+  &:focus {
+    outline: none;
+    border-color: $yellow;
+  }
+
+  ::selection {
+    background-color: transparent;
+    color: inherit;
+  }
+
+  &::-webkit-scrollbar {
+    width: 8px;
+    background-color: $blue-dark;
+    border-radius: 10px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $blue-dark;
+    border-radius: 15px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: $blue-dark;
+    border-radius: 15px;
+  }
+}
+
+/* Botão de envio */
+#new-question-button {
+  background-color: $light-blue;
+  color: $blue-dark;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $orange;
+  }
+}
+
+.user-question,
+.ai-answer {
+  max-width: 90%;
+  word-wrap: break-word;
+  word-break: break-word;
+  margin: 0;
+  padding: 10px;
+  border-radius: 12px;
+  box-sizing: border-box;
+}
