@@ -1,0 +1,37 @@
+<div class="search-page">
+
+  <h1>Resultados da Busca:</h1>
+  <% if @terms.any? || @articles.any? %>
+
+    <h2>Termos:</h2>
+    <% if @terms.any? %>
+      <ul>
+        <% @terms.each do |term| %>
+          <li>
+            <strong><%= term.name %></strong>
+            <%= link_to 'Ver', term_path(term) %>
+          </li>
+        <% end %>
+      </ul>
+    <% else %>
+      <p>Nenhum termo encontrado.</p>
+    <% end %>
+
+    <h2>Artigos:</h2>
+    <% if @articles.any? %>
+      <ul>
+        <% @articles.each do |article| %>
+          <li>
+            <strong><%= article.name %></strong>
+            <%= link_to 'Leia mais', article_path(article) %>
+          </li>
+        <% end %>
+      </ul>
+    <% else %>
+      <p>Nenhum artigo encontrado.</p>
+    <% end %>
+    
+  <% else %>
+    <p>Nenhum resultado encontrado para sua busca.</p>
+  <% end %>
+</div>
