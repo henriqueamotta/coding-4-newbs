@@ -35,4 +35,37 @@ class ChatbotJob < ApplicationJob
     return results
   end
 
+# RAG - não implementado
+#   def questions_formatted_for_openai
+#     questions = @question.user.questions
+#     results = []
+
+#     system_text = "Você é um assistente virtual especializado em linguagem de programação, designado para ajudar os usuários a aprenderem de forma clara, simples e objetiva. Sempre mencione o título do artigo. Se não souber a resposta, diga 'Infelizmente a Latinha não sabe.' Caso não haja nenhum artigo listado no final da mensagem, informe que não temos um artigo sobre o tema solicitado. Aqui estão os artigos que você deve usar para responder às perguntas dos usuários: "
+#     # to nearest_products code as private method
+#     nearest_products.each do |product|
+#       system_text += "** PRODUCT #{product.id}: name: #{product.name}, description: #{product.description} **"
+#     end
+#     results << { role: "system", content: system_text }
+
+#     questions.each do |question|
+#       results << { role: "user", content: question.user_question }
+#       results << { role: "assistant", content: question.ai_answer || "" }
+#     end
+#     return results
+#   end
+
+#   def nearest_products
+#     response = client.embeddings(
+#       parameters: {
+#         model: 'text-embedding-3-small',
+#         input: @question.user_question
+#       }
+#     )
+#     question_embedding = response['data'][0]['embedding']
+#     return Product.nearest_neighbors(
+#       :embedding, question_embedding,
+#       distance: "euclidean"
+#     ).first(3)
+#   end
+
 end
