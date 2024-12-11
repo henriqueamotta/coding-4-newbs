@@ -7,7 +7,7 @@ class TermsController < ApplicationController
   def index
     @terms = policy_scope(Term)
     if params[:query].present?
-      @terms = @terms.where("name ILIKE ?", "%#{params[:query]}%")
+      @terms = @terms.where("name ILIKE ? OR description ILIKE ?", "%#{params[:query]}%", "%#{params[:query]}%")
     end
   end
 

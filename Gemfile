@@ -56,6 +56,7 @@ gem "redcarpet"
 gem "cloudinary"
 gem "solid_cable"
 gem "solid_queue"
+# gem "neighbor"
 
 group :development, :test do
   gem "dotenv-rails"

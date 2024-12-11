@@ -6,6 +6,9 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = policy_scope(Article)
+    if params[:query].present?
+      @articles = @articles.where("name ILIKE ? OR content ILIKE ?", "%#{params[:query]}%", "%#{params[:query]}%")
+    end
 
     # Artigo em destaque(o mais recente)
     @featured_article = @articles.order(created_at: :desc).first
