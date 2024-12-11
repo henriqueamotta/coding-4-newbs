@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :articles do
     resources :forums,  only: [:new, :create,]
   end
-  
+
   resources :forums, only: [:show, :index, :destroy] do
     resources :messages, only: [:create]
   end
@@ -22,5 +22,7 @@ Rails.application.routes.draw do
   # Rotas para Questions
   resources :questions, only: [:index, :create]
 
+  # Rota para Search
+  get 'search', to: 'search#index', as: :search
 
 end
