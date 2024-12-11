@@ -22,9 +22,11 @@ class ArticlesController < ApplicationController
 
     @articles = @articles.where.not(id: @featured_article.id) if @featured_article
 
+    @articles_content_html = {}
+
     @articles.each do |article|
       markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML.new(render_options = {}))
-      @article_content_html = markdown.render(article.content).html_safe
+      @articles_content_html[article.id] = markdown.render(article.content).html_safe
     end
   end
 
