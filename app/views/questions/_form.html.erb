@@ -1,9 +1,9 @@
-<%= simple_form_for question, html: { data: { controller: "chat-ai", action: "turbo:submit-end->chat-ai#reset" }} do |f| %>
-  <div class="input-group mb-3 w-100">
-    <div class="form-floating">
-      <%= f.input :user_question, label: false, wrapper: false, input_html: { data: { action: "keydown->chat-ai#submitOnEnter", chat_ai_target:"input" }} %>
-      <%= f.label :user_question, "Sua pergunta:" %>
+<%= simple_form_for question, html: { class: "custom-chat-form", data: { controller: "chat-ai", action: "turbo:submit-end->chat-ai#reset" }} do |f| %>
+  <div class="custom-input-group input-group mb-3 w-100">
+    <div class="custom-form-floating form-floating">
+      <%= f.input :user_question, label: false, wrapper: false, input_html: { class: "chat-input", data: { action: "keydown->chat-ai#submitOnEnter", chat_ai_target:"input" }} %>
+      <%# <%= f.label :user_question, "Sua pergunta:" %>
     </div>
-    <%= f.submit "Perguntar", id: "new-question-button", class: "btn btn-primary" %>
+    <%= f.submit "Perguntar", id: "new-question-button", class: "btn btn-primary chat-submit" %>
   </div>
 <% end %>
