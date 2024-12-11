@@ -4,6 +4,12 @@
     <h1>ARTIGOS</h1>
   </div>
 
+  <div class="search-bar">
+    <form action="<%= articles_path %>" method="get">
+      <input type="text" name="query" placeholder="Procurar..." class="search-input" />
+      </form>
+  </div>
+
   <% if @featured_article %>
     <div class="featured-article">
       <div class="image">
@@ -14,7 +20,7 @@
       <div class="content">
         <h2><%= @featured_article.name %></h2>
         <p><%= truncate(strip_tags(@featured_article_content_html), length: 200) %></p>
-        <%= link_to "LEIA MAIS ", article_path(@featured_article), class: "btn-read-more" %>
+        <%= link_to "LEIA MAIS", article_path(@featured_article), class: "btn-read-more" %>
       </div>
     </div>
   <% end %>
