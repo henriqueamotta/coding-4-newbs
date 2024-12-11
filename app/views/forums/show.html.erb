@@ -1,32 +1,36 @@
-<h1><%= @forum.title %></h1>
-<h2>Artigo relacionado: <%= link_to @forum.article.name, article_path(@forum.article) %></h2>
-<p><%= @forum.content %></p>
-<p>Autor: <%= @forum.user.email.match(/([^@]+)@/)[1]%></p>
+<div class="container-title">
+  <h1 class="title"><%= @forum.title %></h1>
+  <h2>Artigo relacionado: <%= link_to @forum.article.name, article_path(@forum.article) , class:"link-list" %></h2>
+  <p><%= @forum.content %></p>
+  <p>Autor: <%= @forum.user.email.match(/([^@]+)@/)[1]%></p>
 
-<% if policy(@forum).destroy? %>
-  <%= link_to 'Excluir Fórum', forum_path(@forum), data: { turbo_method: :delete, turbo_confirm: 'Você tem certeza que deseja excluir este fórum?' }, class: 'btn btn-danger' %>
-<% end %>
-
-<h3>Mensagens</h3>
-<ul>
-  <% @messages.each do |message| %>
-    <li>
-      <%= message.content %> - <%= message.user.email.match(/([^@]+)@/)[1] %>
-      <% if policy(message).destroy? %>
-        <%= link_to 'Excluir Mensagem', message_path(message), data: {turbo_method: :delete, turbo_confirm: 'Você tem certeza que deseja excluir esta mensagem?' }, class: 'btn btn-danger btn-sm' %>
-      <% end %>
-    </li>
+  <% if policy(@forum).destroy? %>
+    <%= link_to 'Excluir Fórum', forum_path(@forum), data: { turbo_method: :delete, turbo_confirm: 'Você tem certeza que deseja excluir este fórum?' }, class: 'btn btn-danger' %>
   <% end %>
-</ul>
-
-<h3>Adicionar Mensagem</h3>
-<%= form_with(model: [@forum, Message.new], local: true) do |form| %>
-  <div>
-    <%= form.label :content %>
-    <%= form.text_area :content %>
+</div>
+  <div class="container-messages">
+    <h3>Mensagens</h3>
+    <ul>
+      <% @messages.each do |message| %>
+        <li>
+          <%= message.content %> - <%= message.user.email.match(/([^@]+)@/)[1] %>
+          <% if policy(message).destroy? %>
+            <%= link_to 'Excluir Mensagem', message_path(message), data: {turbo_method: :delete, turbo_confirm: 'Você tem certeza que deseja excluir esta mensagem?' }, class: 'btn btn-danger btn-sm' %>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
   </div>
-  <div>
-    <%= form.submit "Enviar" %>
+  <div class="container-pub">
+    <h3>Adicionar Mensagem</h3>
+    <%= form_with(model: [@forum, Message.new], local: true) do |form| %>
+    <div>
+      <%= form.label :content %>
+      <%= form.text_area :content, class:"text-area" %>
+    </div>
+    <div>
+      <%= form.submit "Enviar" %>
+    </div>
+    <% end %>
   </div>
-<% end %>
 
