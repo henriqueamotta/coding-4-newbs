@@ -1,4 +1,5 @@
 class SearchController < ApplicationController
+  before_action :authenticate_user!, except: :index
 
   def index
     @terms = policy_scope(Term)

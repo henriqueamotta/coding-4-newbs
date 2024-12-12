@@ -1,37 +1,46 @@
 <div class="search-page">
+  <h2>Resultados da Pesquisa:</h2>
 
-  <h1>Resultados da Busca:</h1>
   <% if @terms.any? || @articles.any? %>
-
-    <h2>Termos:</h2>
+  <div class="search-container">
+    <h3>Termos:</h3>
     <% if @terms.any? %>
       <ul>
         <% @terms.each do |term| %>
           <li>
-            <strong><%= term.name %></strong>
-            <%= link_to 'Ver', term_path(term) %>
+            <div style="display: flex; justify-content: space-between; width: 100%;">
+              <strong><%= term.name %></strong>
+              <%= link_to 'VER', term_path(term), class: 'btn-read-more' %>
+            </div>
           </li>
         <% end %>
       </ul>
     <% else %>
       <p>Nenhum termo encontrado.</p>
     <% end %>
+  </div>
 
-    <h2>Artigos:</h2>
+  <div class="search-container">
+    <h3>Artigos:</h3>
     <% if @articles.any? %>
       <ul>
         <% @articles.each do |article| %>
           <li>
-            <strong><%= article.name %></strong>
-            <%= link_to 'Leia mais', article_path(article) %>
+            <div style="display: flex; justify-content: space-between; width: 100%;">
+              <strong><%= article.name %></strong>
+              <%= link_to 'LEIA MAIS', article_path(article), class: 'btn-read-more' %>
+            </div>
           </li>
         <% end %>
       </ul>
     <% else %>
       <p>Nenhum artigo encontrado.</p>
     <% end %>
-    
+  </div>
+
   <% else %>
+  <div class="search-container">
     <p>Nenhum resultado encontrado para sua busca.</p>
+  </div>
   <% end %>
 </div>

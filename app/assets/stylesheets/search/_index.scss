@@ -1,186 +1,125 @@
 .search-page {
-  padding: 20px;
-  background-color: $secondary;
+  background-color: #122738; // Fundo suave
+  padding: 20px; // Espaçamento interno
+  border-radius: 8px; // Bordas arredondadas
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); // Sombra suave
+  display: flex; // Usar flexbox para centralizar
+  flex-direction: column; // Direção da coluna
+  align-items: center; // Centralizar horizontalmente
 
-  .header {
-    text-align: center;
-    margin-bottom: 30px;
-
-    i {
-      font-size: 3rem;
-      color: $gainsboro;
-      margin-bottom: 10px;
-      text-shadow: 0 4px 4px $hot-pink;
-    }
-
-    h1 {
-      margin-top: 20px;
-      font-family: $headers-font;
-      font-size: 3rem;
-      color: transparent;
-      background: linear-gradient(90deg, #ffc600, #36c90f, #ff0088);
-      -webkit-background-clip: text;
-      -webkit-text-stroke: 2px $yellow;
-      background-clip: text;
-      text-shadow: 0 2px 4px rgba(255, 102, 0, 0.836), 0 4px 6px rgba(255, 0, 136, 0.726), 0px -2px 5px rgba(255, 198, 0, 0.7);
-      position: relative;
-    }
-    h1::after {
-      content: "";
-      position: absolute;
-      left: 50%;
-      bottom: -10px;
-      transform: translateX(-50%);
-      width: 400px;
-      height: 4px;
-      background: linear-gradient(90deg, $green, $sky_blue);
-    }
-  }
-
-
-  .featured-article {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 30px;
-    margin-bottom: 50px;
-
-    .image {
-      margin-top: 40px;
-      flex: 0 0 50%;
-      display: flex;
-      justify-content: center;
-
-      img {
-        width: 100%;
-        max-width: 800px;
-        border-radius: 10px;
-        box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.658);
-      }
-    }
-
-    .content {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 15px;
-      padding-left: 10px;
-
-      h2 {
-        font-family: $body-font;
-        font-size: 2.5rem;
-        color: transparent;
-        background: linear-gradient(90deg, #ffc600, #36c90f, #ff0088);
-        -webkit-background-clip: text;
-        -webkit-text-stroke: 2px $yellow;
-        background-clip: text;
-        text-shadow: 0 2px 4px rgba(255, 102, 0, 0.836), 0 4px 6px rgba(255, 0, 136, 0.726), 0px -2px 5px rgba(255, 198, 0, 0.7);
-      }
-
-      p {
-        font-family: $body-font;
-        font-size: 1rem;
-        line-height: 1.5;
-        color: $green;
-      }
-
-      .btn-read-more {
-        align-self: flex-start;
-        background: $light-blue;
-        color: $blue-dark;
-        font-size: 0.9rem;
-        padding: 8px 15px;
-        border-radius: 5px;
-        text-decoration: none;
-        box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.3);
-        transition: transform 0.3s ease;
-
-        &:hover {
-          transform: translateY(-2px);
-          box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.5);
-        }
-      }
-    }
-  }
-
-  .latest-articles {
+  h2 {
     margin-top: 20px;
+    font-family: $headers-font;
+    font-size: 3rem;
+    color: transparent;
+    background: linear-gradient(90deg, #ffc600, #36c90f, #ff0088);
+    -webkit-background-clip: text;
+    -webkit-text-stroke: 2px $yellow;
+    background-clip: text;
+    text-shadow: 0 2px 4px rgba(255, 102, 0, 0.836), 0 4px 6px rgba(255, 0, 136, 0.726), 0px -2px 5px rgba(255, 198, 0, 0.7);
+    position: relative;
+  }
+  h2::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    width: 400px;
+    height: 4px;
+    background: linear-gradient(90deg, $green, $sky_blue);
+  }
 
-    h3 {
-      font-family: $body-font;
-      font-size: 2rem;
-      color: $yellow;
-      margin-bottom: 20px;
-      text-align: left;
-      text-shadow: 0 4px 4px $orange;
+  h3 {
+    font-family: $body-font; // Fonte dos subtítulos
+    font-size: 2rem; // Tamanho dos subtítulos
+    color: #122738; // Cor dos subtítulos
+    margin-top: 20px; // Espaçamento acima
+    width: 100%; // Para que o título ocupe toda a largura
+    display: flex; // Usar flexbox para alinhar o título e o botão
+    justify-content: space-between; // Espaçar o título e o botão
+    align-items: center; // Alinhar verticalmente
+  }
+
+  ul {
+    list-style-type: none; // Remover marcadores
+    padding: 0; // Remover padding padrão
+    width: 100%; // Para que a lista ocupe toda a largura
+  }
+
+  li {
+    background-color: $blue-dark; // Fundo dos itens
+    color: $gainsboro;
+    margin: 10px 0; // Espaçamento entre itens
+    padding: 15px; // Espaçamento interno
+    border-radius: 5px; // Bordas arredondadas
+    box-shadow: 0 4px 8px $green; // Sombra suave
+    transition: transform 0.3s, box-shadow 0.3s; // Efeito de transição
+    display: flex; // Usar flexbox para alinhar o texto e o botão
+    justify-content: space-between; // Espaçar o texto e o botão
+    align-items: center; // Alinhar verticalmente
+    height: 60px; // Defina uma altura fixa para centralizar verticalmente
+
+    &:hover {
+      transform: translateY(-5px); // Efeito de elevação ao passar o mouse
+      box-shadow: 0 6px 12px $secondary; // Sombra ao passar o mouse
     }
 
-    .articles-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      justify-content: center;
+    display: flex; // Usar flexbox para alinhar o texto e o botão
+    justify-content: space-between; // Espaçar o texto e o botão
+    align-items: center; // Alinhar verticalmente
+  }
 
-      .card {
-        background-color: $blue-dark;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px $green;
-        padding: 15px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        transition: transform 0.3s, box-shadow 0.3s;
+  a {
+    display: inline-block; // Para que o link se comporte como um botão
+    padding: 10px 15px; // Espaçamento interno do botão
+    background: $light-blue; // Cor de fundo do botão
+    color: $blue-dark; // Cor do texto do botão
+    text-decoration: none; // Remover sublinhado
+    border-radius: 5px; // Bordas arredondadas
+    transition: transform 0.3s ease; // Efeito de transição
 
-        &:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 6px 12px $secondary;
-        }
-
-        .card-image {
-          margin-bottom: 15px;
-          width: 100%;
-          height: 200px;
-
-          img {
-            width: 100%;
-            height: 100%;
-            border-radius: 10px;
-            box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.658);
-        }
-      }
-        .content {
-          h4 {
-            font-family: $body-font;
-            font-size: 1.2rem;
-            color: $yellow;
-            margin: 10px 0;
-            text-shadow: 0 4px 4px $orange, 0 4px 4px $hot-pink;
-          }
-
-          p {
-            font-family: $body-font;
-            font-size: 0.9rem;
-            color: $green;
-          }
-
-          .btn-read-more {
-            background: $light-blue;
-            color: $blue-dark;
-            font-size: 0.9rem;
-            padding: 8px 15px;
-            border-radius: 5px;
-            text-decoration: none;
-            box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.3);
-            transition: transform 0.3s ease;
-
-            &:hover {
-              transform: translateY(-2px);
-              box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.5);
-            }
-          }
-        }
-      }
+    &:hover {
+      background: $sky_blue; // Cor do botão ao passar o mouse
+      transform: translateY(-2px); // Efeito de elevação ao passar o mouse
     }
+  }
+
+  .search-container {
+    flex: 1;
+    margin: 20px auto 40px auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    background: $gainsboro;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px $yellow;
+    border: 2px solid $blue-dark;
+    overflow-y: auto; /* Scroll caso os itens ultrapassem a altura */
+    max-height: 500px; /* Altura máxima para ativar o scroll */
+
+    &::-webkit-scrollbar {
+      width: 10px; /* Largura do scrollbar */
+      background-color: $gainsboro; /* Cor do fundo do scrollbar */
+      border-radius: 25px;
+      margin: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $blue-dark; /* Cor da parte que desliza */
+      border-radius: 25px; /* Deixa arredondado */
+      border: 2px solid $blue-dark; /* Contorno da parte que desliza */
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: lighten($sky_blue, 10%); /* Cor mais clara ao passar o mouse */
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: darken($blue-dark, 10%); /* Fundo do track */
+      border-radius: 25px; /* Arredondamento do track */
+      margin: 50px;
+    }
+
   }
 }
