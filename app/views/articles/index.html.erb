@@ -11,7 +11,7 @@
   </div>
 
   <% if @featured_article %>
-    <div class="featured-article">
+    <div class="featured-article container">
       <div class="image">
         <% if @featured_article.photo.attached? %>
           <%= cl_image_tag @featured_article.photo.key, alt: "Image for featured article" %>
@@ -25,7 +25,7 @@
     </div>
   <% end %>
 
-  <div class="latest-articles">
+  <div class="latest-articles container">
     <h3>Artigos Recentes</h3>
     <div class="articles-grid">
       <% @articles.each do |article| %>

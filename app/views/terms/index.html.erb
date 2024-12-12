@@ -11,11 +11,12 @@
   </div>
 
   <div class="terms-container">
-  <div class="terms-list">
-    <% @terms.each do |term| %>
-      <div class="term-item">
-        <%= link_to term.name, term_path(term), class: "term-link" %>
-      </div>
-    <% end %>
+    <div class="terms-list">
+      <% @terms.each do |term| %>
+        <div class="term-item">
+          <%= link_to term.name, term_path(term), class: "term-link" %>
+        </div>
+      <% end %>
+    </div>
   </div>
-  </div>
+</div>

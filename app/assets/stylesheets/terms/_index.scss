@@ -78,11 +78,11 @@
     width: 80%;
     max-width: 600px;
     background: $gainsboro;
-    border-radius: 15px;
+    border-radius: 8px;
     box-shadow: 0 4px 15px $yellow;
     border: 2px solid $blue-dark;
     overflow-y: auto; /* Scroll caso os itens ultrapassem a altura */
-    max-height: 500px; /* Altura máxima para ativar o scroll */
+    max-height: 300px; /* Altura máxima para ativar o scroll */
 
     &::-webkit-scrollbar {
       width: 10px; /* Largura do scrollbar */
