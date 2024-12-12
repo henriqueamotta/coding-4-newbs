@@ -15,7 +15,9 @@
         <% @related_articles.each do |article| %>
           <li class="article-item">
             <h4><%= link_to article.name, article_path(article), class: "article-link" %></h4>
-            <p><%= truncate(article.content, length: 100) %></p>
+            <p class="related-article-content">
+              <%= truncate(strip_tags(@related_articles_content_html[article.id]), length: 100) %>
+            </p>
           </li>
         <% end %>
       </ul>
