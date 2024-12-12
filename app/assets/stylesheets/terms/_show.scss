@@ -63,7 +63,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  min-height: 80vh;
+  //min-height: 80vh;
 }
 
 
@@ -116,5 +116,12 @@ body {
 
 .related-articles p {
   margin: 5px 0 0;
-  color: $green;
+}
+
+.related-article-content {
+  font-size: 16px;
+  color: $blue-dark;
+  line-height: 1.6;
+  margin-top: 5px;
+  text-align: justify;
 }

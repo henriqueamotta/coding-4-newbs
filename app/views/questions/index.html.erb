@@ -1,8 +1,10 @@
 <div class="container chatbot" data-controller="chat-ai">
-  <h1>Latinha responde:</h1>
+  <div class="chat-header">
+    <%= image_tag "logoia.png", alt: "Logo Latinha", class: "chat-logo" %>
+    <h1>Latinha Responde</h1>
+  </div>
   <div id="questions" data-chat-ai-target="questions">
     <%= render @questions %>
   </div>
-
   <%= render "form", question: @question %>
 </div>

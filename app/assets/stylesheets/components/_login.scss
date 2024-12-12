@@ -4,7 +4,7 @@
     padding: 20px;
     border: 2px solid $blue-dark;
     border-radius: 10px;
-    background-color: $gainsboro;
+    background-color: $blue-highlight-two;
     box-shadow: 0 4px 10px $green;
     text-align: center;
 
@@ -41,7 +41,7 @@
       }
 
       .custom-label {
-        color: $blue-dark;
+        color: $gainsboro;
         font-size: 0.9rem;
         margin-bottom: 5px;
       }
@@ -68,7 +68,7 @@
     }
 
     .custom-link {
-      color: $blue-dark;
+      color: $sky_blue;
       text-decoration: none;
       padding-right: 90px;
 
@@ -78,7 +78,9 @@
       }
     }
   }
-
+  .text-center {
+    color: $gainsboro;
+  }
   .forgot-pass-link {
     color: $sky-blue; /* Escolha uma cor destacada */
     text-decoration: none; /* Remove sublinhado */

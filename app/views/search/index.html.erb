@@ -1,0 +1,46 @@
+<div class="search-page">
+  <h2>Resultados da Pesquisa:</h2>
+
+  <% if @terms.any? || @articles.any? %>
+  <div class="search-container">
+    <h3>Termos:</h3>
+    <% if @terms.any? %>
+      <ul>
+        <% @terms.each do |term| %>
+          <li>
+            <div style="display: flex; justify-content: space-between; width: 100%;">
+              <strong><%= term.name %></strong>
+              <%= link_to 'VER', term_path(term), class: 'btn-read-more' %>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    <% else %>
+      <p>Nenhum termo encontrado.</p>
+    <% end %>
+  </div>
+
+  <div class="search-container">
+    <h3>Artigos:</h3>
+    <% if @articles.any? %>
+      <ul>
+        <% @articles.each do |article| %>
+          <li>
+            <div style="display: flex; justify-content: space-between; width: 100%;">
+              <strong><%= article.name %></strong>
+              <%= link_to 'LEIA MAIS', article_path(article), class: 'btn-read-more' %>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    <% else %>
+      <p>Nenhum artigo encontrado.</p>
+    <% end %>
+  </div>
+
+  <% else %>
+  <div class="search-container">
+    <p>Nenhum resultado encontrado para sua busca.</p>
+  </div>
+  <% end %>
+</div>

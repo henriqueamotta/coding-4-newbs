@@ -7,7 +7,7 @@ class TermsController < ApplicationController
   def index
     @terms = policy_scope(Term)
     if params[:query].present?
-      @terms = @terms.where("name ILIKE ? OR description ILIKE ?", "%#{params[:query]}%")
+      @terms = @terms.where("name ILIKE ? OR description ILIKE ?", "%#{params[:query]}%", "%#{params[:query]}%")
     end
   end
 
@@ -19,6 +19,11 @@ class TermsController < ApplicationController
     @related_articles = Article.where("name ILIKE ? OR content ILIKE ?", "%#{@term.name}%", "%#{@term.name}%")
                                .order(created_at: :desc)
                                .limit(5)
+
+    @related_articles_content_html = {}
+    @related_articles.each do |article|
+      @related_articles_content_html[article.id] = markdown.render(article.content).html_safe
+    end
   end
 
   def new
