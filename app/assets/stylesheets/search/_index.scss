@@ -1,13 +1,6 @@
 .search-page {
-  flex: 1;
-  margin: 20px auto 40px auto;
   padding: 20px;
-  width: 100%;
-  max-width: 1000px;
-  background: $gainsboro;
-  border-radius: 8px;
-  box-shadow: 0 4px 15px $yellow;
-  border: 2px solid $blue-dark;
+  background-color: $secondary;
 
   .header {
     text-align: center;
