@@ -1,11 +1,11 @@
 class ArticlePolicy < ApplicationPolicy
 
   def index?
-    true # Qualquer usuário pode listar os termos
+    true # Qualquer usuário pode listar os artigos
   end
 
   def show?
-    true # Qualquer usuário pode visualizar os termos
+    true # Qualquer usuário pode visualizar os artigos
   end
 
   def create?
@@ -22,7 +22,7 @@ class ArticlePolicy < ApplicationPolicy
 
   class Scope < Scope
     def resolve
-      scope.all # Retorna todos os termos visíveis para o usuário
+      scope.all # Retorna todos os artigos visíveis para o usuário
     end
   end
 
