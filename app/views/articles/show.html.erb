@@ -42,6 +42,13 @@
   </div>
 </div>
 
-<%@article.forums.each do |forum|  %>
-  <%= link_to forum.title, forum_path(forum) %>
-<% end %>
+<div class="forum-links">
+  <h4>Fóruns Relacionados</h4>
+  <ul>
+    <% @article.forums.each do |forum| %>
+      <li>
+        <%= link_to forum.title, forum_path(forum) %>
+      </li>
+    <% end %>
+  </ul>
+</div>
