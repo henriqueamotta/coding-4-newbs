@@ -15,7 +15,6 @@
 
 
 .container-messages {
-
     background-color: $gainsboro;
     border: 1px solid $orange;
     border-radius: 8px;
@@ -29,8 +28,19 @@
     white-space: pre-wrap; /* Preserva quebras de linha */
     word-wrap: break-word; /* Quebra palavras longas para evitar overflow */
     line-height: 1.5; /* Adiciona espaçamento entre linhas */
+    margin-bottom: 0;
   }
-  
+
+.container-coments {
+  background-color: $gainsboro;
+  border: 1px solid $orange;
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 90%;
+  margin: auto;
+  margin-top: 20px;
+}
+
 
 .container-pub {
     background-color: $gainsboro;
@@ -41,9 +51,6 @@
     margin: auto;
     margin-top: 15px;
     margin-bottom: 20px;
-    
-
-
 }
 
 .text-area {
@@ -51,7 +58,6 @@
 }
 
 .text-label {
-
     padding: 10px;
 }
 
@@ -66,10 +72,14 @@
     text-align: center; /* Alinha o texto no centro */
     border: none; /* Remove borda padrão */
     cursor: pointer; /* Adiciona cursor de ponteiro no hover */
-    transition: background-color 0.3s ease, transform 0.2s ease; 
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .btn-delete:hover {
     background-color: #c0392b; /* Cor mais escura no hover */
     transform: scale(1.05); /* Aumenta ligeiramente o tamanho no hover */
-  }
+}
+
+h4 {
+  font-family: $body-font;
+}

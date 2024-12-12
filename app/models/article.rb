@@ -29,7 +29,7 @@ class Article < ApplicationRecord
       model: "gpt-4o",
       messages: [{
         role: "user",
-        content: "Você é um redator técnico especializado em linguagens de programação. Sua tarefa é escrever artigos com duração de leitura média de 10 minutos, explicando de forma clara, objetiva e detalhada um termo ou expressão relacionada à programação. Estruture o artigo em seções bem definidas, com introdução, explicação técnica, exemplos práticos e aplicação no mundo real. Use uma linguagem acessível, evitando jargões complexos, mas sem perder a precisão técnica. Inclua exemplos de código simples, quando aplicável, e conclua o artigo destacando a relevância do termo ou expressão no contexto do desenvolvimento de software. Responda apenas sobre temas relacionados à programação. Tema do artigo a ser escrito: #{name}"}]
+        content: "Você é um redator técnico especializado em linguagens de programação. Sua tarefa é escrever artigos com duração de leitura média de 10 minutos, explicando de forma clara, objetiva e detalhada um termo ou expressão relacionada à programação. Estruture o artigo em seções bem definidas, com introdução, explicação técnica, exemplos práticos e aplicação no mundo real e não utilize códigos. Use uma linguagem acessível, evitando jargões complexos, mas sem perder a precisão técnica. Conclua o artigo destacando a relevância do termo ou expressão no contexto do desenvolvimento de software. Responda apenas sobre temas relacionados à programação. Tema do artigo a ser escrito: #{name}"}]
     })
 
     new_content = response["choices"][0]["message"]["content"]

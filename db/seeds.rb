@@ -26,16 +26,16 @@ puts user.password
 puts "**********************"
 
 puts "Creating Terms database..."
-term_1 = Term.create!(name: "Active Admin")
-term_2 = Term.create!(name: "Active Job")
+# term_1 = Term.create!(name: "Active Admin")
+# term_2 = Term.create!(name: "Active Job")
 term_3 = Term.create!(name: "Active Model")
 term_4 = Term.create!(name: "Active Record")
 term_5 = Term.create!(name: "Active Storage")
-term_6 = Term.create!(name: "Active Support")
+# term_6 = Term.create!(name: "Active Support")
 term_7 = Term.create!(name: "ActiveSupport Concerns")
-term_8 = Term.create!(name: "ActiveRecord Callbacks")
+# term_8 = Term.create!(name: "ActiveRecord Callbacks")
 term_9 = Term.create!(name: "Action Cable")
-term_10 = Term.create!(name: "Action Mailbox")
+# term_10 = Term.create!(name: "Action Mailbox")
 # term_11 = Term.create!(name: "Action Mailer")
 # term_12 = Term.create!(name: "Action Pack")
 # term_13 = Term.create!(name: "Action Policy")
@@ -73,7 +73,7 @@ term_10 = Term.create!(name: "Action Mailbox")
 # term_45 = Term.create!(name: "Error Handling")
 # term_46 = Term.create!(name: "Event-Driven Architecture")
 # term_47 = Term.create!(name: "Factory Bot")
-# term_48 = Term.create!(name: "Factory Pattern")
+term_48 = Term.create!(name: "Factory Pattern")
 # term_49 = Term.create!(name: "Form Helpers")
 # term_50 = Term.create!(name: "Full-text Search")
 # term_51 = Term.create!(name: "Gem")
@@ -148,12 +148,12 @@ article5 = Article.create!(name: "MVC explicado", term_id: term_7.id)
 article5_url = "https://miro.medium.com/v2/resize:fit:1400/0*ZqwogJDz1cA1sr-B.png"
 article5.photo.attach(io: URI.open(article5_url), filename: 'mvc_explicado.png', content_type: 'image/png')
 
-article6 = Article.create!(name: "Trabalhando com Active Record", term_id: term_1.id)
-article6_url = "https://i.sstatic.net/KtUQF.png"
-article6.photo.attach(io: URI.open(article6_url), filename: 'active_record.png', content_type: 'image/png')
+# article6 = Article.create!(name: "Trabalhando com Active Record", term_id: term_1.id)
+# article6_url = "https://i.sstatic.net/KtUQF.png"
+# article6.photo.attach(io: URI.open(article6_url), filename: 'active_record.png', content_type: 'image/png')
 
 # article7 = Article.create!(name: "Como criar um Hash no Ruby", term_id: term_6.id)
-# article7_url = "https://www.demorodavel.com/wp-content/uploads/2023/08/image-1-1024x708.png"
+# article7_url = "https://s3-us-west-2.amazonaws.com/images-devcamp/Ruby+Programming/Ruby+Hashes/Guide+to+the+Dig+Method+in+Ruby+%23+2311/image11.png"
 # article7.photo.attach(io: URI.open(article7_url), filename: 'hash_ruby.png', content_type: 'image/png')
 
 # article8 = Article.create!(name: "Entendendo DRY em programação", term_id: term_4.id)
@@ -324,9 +324,9 @@ article6.photo.attach(io: URI.open(article6_url), filename: 'active_record.png',
 # article49_url = "https://media.licdn.com/dms/image/v2/C4D12AQGE_fJPNf47sg/article-cover_image-shrink_423_752/article-cover_image-shrink_423_752/0/1520126180747?e=1739404800&v=beta&t=-avjh4ZQ37QTHk9mYm9tCBiAjgvBUVInbUmTe1muPBs"
 # article49.photo.attach(io: URI.open(article49_url), filename: 'capybara.png', content_type: 'image/png')
 
-# article50 = Article.create!(name: "Guia de boas práticas na programação", term_id: term_48.id)
-# article50_url = "https://www.superti360.com.br/wp-content/uploads/2022/02/0-destaque-linguagens-de-programacao-2019.jpg"
-# article50.photo.attach(io: URI.open(article50_url), filename: 'praticas.png', content_type: 'image/png')
+article50 = Article.create!(name: "Guia de boas práticas na programação", term_id: term_48.id)
+article50_url = "https://www.superti360.com.br/wp-content/uploads/2022/02/0-destaque-linguagens-de-programacao-2019.jpg"
+article50.photo.attach(io: URI.open(article50_url), filename: 'praticas.png', content_type: 'image/png')
 
 
 # 5. Display a message:
