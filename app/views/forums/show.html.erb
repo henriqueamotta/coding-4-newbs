@@ -13,9 +13,9 @@
     <ul>
       <% @messages.each do |message| %>
         <li>
-          <%= message.content %> - <%= message.user.email.match(/([^@]+)@/)[1] %>
+        <span class="message-content"><%= message.user.email.match(/([^@]+)@/)[1] %> - <%= message.content %></span>  
           <% if policy(message).destroy? %>
-            <%= link_to 'Excluir Mensagem', message_path(message), data: {turbo_method: :delete, turbo_confirm: 'Você tem certeza que deseja excluir esta mensagem?' }, class: 'btn btn-danger btn-sm' %>
+            <%= link_to 'Excluir Mensagem', message_path(message), data: {turbo_method: :delete, turbo_confirm: 'Você tem certeza que deseja excluir esta mensagem?' }, class: 'btn-delete' %>
           <% end %>
         </li>
       <% end %>
@@ -24,8 +24,8 @@
   <div class="container-pub">
     <h3>Adicionar Mensagem</h3>
     <%= form_with(model: [@forum, Message.new], local: true) do |form| %>
-    <div>
-      <%= form.label :content %>
+    <div class="text-label">
+      <% form.label :content %>
       <%= form.text_area :content, class:"text-area" %>
     </div>
     <div>
