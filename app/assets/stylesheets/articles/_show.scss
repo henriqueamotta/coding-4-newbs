@@ -79,7 +79,7 @@
   h1, h3, h2 {
     font-family: $body-font;
     color: $yellow;
-    text-shadow: 0 4px 4px $orange, 0 4px 4px $hot-pink;
+    // text-shadow: 0 4px 4px $orange, 0 4px 4px $hot-pink;
   }
 
   .back-to-top {
@@ -125,6 +125,46 @@
     &:hover {
       transform: translateY(-2px);
       box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.5);
+    }
+  }
+  .actions {
+    display: flex;
+    justify-content: space-between; // Distribui os botões nas extremidades
+    margin-top: 20px; // Adiciona um espaço acima dos botões
+
+    .action-buttons-left {
+      // Estilos para o botão "Novo Fórum"
+    }
+
+    .action-buttons-right {
+      // Estilos para o botão "Voltar"
+      .btn-back {
+        background-color: $blue-highlight-two; // Cor de fundo do botão
+        color: white; // Cor do texto
+        padding: 10px 15px; // Espaçamento interno
+        border: none; // Remove bordas
+        border-radius: 5px; // Bordas arredondadas
+        text-decoration: none; // Remove sublinhado
+        cursor: pointer; // Muda o cursor para indicar que é clicável
+
+        &:hover {
+          background-color: #0056b3; // Cor de fundo ao passar o mouse
+        }
+      }
+    }
+
+    .btn-new-forum {
+      background-color: $blue-highlight-two; // Cor de fundo do botão
+      color: white; // Cor do texto
+      padding: 10px 15px; // Espaçamento interno
+      border: none; // Remove bordas
+      border-radius: 5px; // Bordas arredondadas
+      text-decoration: none; // Remove sublinhado
+      cursor: pointer; // Muda o cursor para indicar que é clicável
+
+      &:hover {
+        background-color: #218838; // Cor de fundo ao passar o mouse
+      }
     }
   }
 }

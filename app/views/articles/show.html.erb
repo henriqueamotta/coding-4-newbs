@@ -31,13 +31,17 @@
       <i class="fas fa-arrow-up"></i>
     </a>
   </div>
-  <div class="actions">
+  <br>
+
+<div class="actions">
+  <div class="action-buttons-left">
+    <%= link_to 'Novo Fórum', new_article_forum_path(article_id: @article.id), class: "btn-new-forum" %>
+  </div>
+  <div class="action-buttons-right">
     <%= link_to 'VOLTAR', articles_path, class: "btn-back" %>
   </div>
 </div>
-<div class="actions">
-<%= link_to 'Novo Forum', new_article_forum_path(article_id: @article.id)  %>
-</div>
+
 <%@article.forums.each do |forum|  %>
-<%= link_to forum.title, forum_path(forum) %>
+  <%= link_to forum.title, forum_path(forum) %>
 <% end %>
