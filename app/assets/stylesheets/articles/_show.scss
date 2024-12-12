@@ -79,7 +79,6 @@
   h1, h3, h2 {
     font-family: $body-font;
     color: $yellow;
-    // text-shadow: 0 4px 4px $orange, 0 4px 4px $hot-pink;
   }
 
   .back-to-top {
@@ -129,42 +128,94 @@
   }
   .actions {
     display: flex;
-    justify-content: space-between; // Distribui os botões nas extremidades
-    margin-top: 20px; // Adiciona um espaço acima dos botões
+    justify-content: space-between;
+    margin-top: 20px;
 
     .action-buttons-left {
-      // Estilos para o botão "Novo Fórum"
+
     }
 
     .action-buttons-right {
-      // Estilos para o botão "Voltar"
       .btn-back {
-        background-color: $blue-highlight-two; // Cor de fundo do botão
-        color: white; // Cor do texto
-        padding: 10px 15px; // Espaçamento interno
-        border: none; // Remove bordas
-        border-radius: 5px; // Bordas arredondadas
-        text-decoration: none; // Remove sublinhado
-        cursor: pointer; // Muda o cursor para indicar que é clicável
+        background-color: $blue-highlight-two;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        text-decoration: none;
+        cursor: pointer;
 
         &:hover {
-          background-color: #0056b3; // Cor de fundo ao passar o mouse
+          background-color: $green;
         }
       }
     }
 
     .btn-new-forum {
-      background-color: $blue-highlight-two; // Cor de fundo do botão
-      color: white; // Cor do texto
-      padding: 10px 15px; // Espaçamento interno
-      border: none; // Remove bordas
-      border-radius: 5px; // Bordas arredondadas
-      text-decoration: none; // Remove sublinhado
-      cursor: pointer; // Muda o cursor para indicar que é clicável
+      background-color: $blue-highlight-two;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      cursor: pointer;
 
       &:hover {
-        background-color: #218838; // Cor de fundo ao passar o mouse
+        background-color: $green;
       }
     }
+  }
+}
+
+.forum-links {
+  margin-top: 20px;
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    margin-bottom: 10px;
+  }
+
+  a {
+    margin-top: 10px;
+    display: inline-block;
+    color: $yellow;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: $orange;
+      color: $gainsboro;
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+      transform: translateY(-3px);
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 10px $yellow;
+    }
+  }
+}
+
+h4 {
+  color: $gainsboro;
+  text-align: center;
+  position: relative;
+  margin-bottom: 20px;
+  margin-top: 65px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, $green, $sky_blue);
   }
 }
