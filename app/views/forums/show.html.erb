@@ -1,36 +1,48 @@
 <div class="container-title">
   <h1 class="title"><%= @forum.title %></h1>
-  <h2>Artigo relacionado: <%= link_to @forum.article.name, article_path(@forum.article) , class:"link-list" %></h2>
+  <h4>
+    Artigo relacionado:
+    <%= link_to @forum.article.name, article_path(@forum.article), class: "link-list" %>
+  </h4>
   <p><%= @forum.content %></p>
-  <p>Autor: <%= @forum.user.email.match(/([^@]+)@/)[1]%></p>
+  <p>Autor: <%= @forum.user.email.match(/([^@]+)@/)[1] %></p>
 
   <% if policy(@forum).destroy? %>
-    <%= link_to 'Excluir Fórum', forum_path(@forum), data: { turbo_method: :delete, turbo_confirm: 'Você tem certeza que deseja excluir este fórum?' }, class: 'btn btn-danger' %>
+    <%= link_to 'Excluir Fórum', forum_path(@forum),
+                data: { turbo_method: :delete, turbo_confirm: 'Você tem certeza que deseja excluir este fórum?' },
+                class: 'btn btn-danger' %>
   <% end %>
 </div>
-  <div class="container-messages">
-    <h3>Mensagens</h3>
+
+<div class="container-messages">
+  <h3>Comentários</h3>
+
+  <div class="container-coments">
     <ul>
       <% @messages.each do |message| %>
-        <li>
-        <span class="message-content"><%= message.user.email.match(/([^@]+)@/)[1] %> - <%= message.content %></span>  
+          <h5 class="message-content"><%= message.user.email.match(/([^@]+)@/)[1] %></h5>
+          <p>"<%= message.content %>"
+          <br>
           <% if policy(message).destroy? %>
-            <%= link_to 'Excluir Mensagem', message_path(message), data: {turbo_method: :delete, turbo_confirm: 'Você tem certeza que deseja excluir esta mensagem?' }, class: 'btn-delete' %>
-          <% end %>
-        </li>
+            <%= link_to 'Excluir Comentário', message_path(message),
+                        data: { turbo_method: :delete, turbo_confirm: 'Você tem certeza que deseja excluir esta mensagem?' } %>
+          <% end %></p>
+          <br>
       <% end %>
     </ul>
   </div>
-  <div class="container-pub">
-    <h3>Adicionar Mensagem</h3>
-    <%= form_with(model: [@forum, Message.new], local: true) do |form| %>
+</div>
+
+<div class="container-pub">
+  <h3>Adicionar Comentário</h3>
+  <%= form_with(model: [@forum, Message.new], local: true) do |form| %>
     <div class="text-label">
-      <% form.label :content %>
-      <%= form.text_area :content, class:"text-area" %>
+      <%= form.label :content %>
+      <%= form.text_area :content, class: "text-area" %>
     </div>
+
     <div>
       <%= form.submit "Enviar" %>
     </div>
-    <% end %>
-  </div>
-
+  <% end %>
+</div>

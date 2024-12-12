@@ -105,9 +105,9 @@ body {
 .related-articles .article-link {
   font-family: $body-font;
   font-weight: bold;
-  color: $yellow;
+  color: $orange;
   text-decoration: none;
-  text-shadow: 0 2px 4px rgba(255, 102, 0, 0.836), 0 4px 6px rgba(255, 0, 136, 0.726), 0px -2px 5px rgba(255, 198, 0, 0.7);
+  // text-shadow: 0 2px 4px rgba(255, 102, 0, 0.836), 0 4px 6px rgba(255, 0, 136, 0.726), 0px -2px 5px rgba(255, 198, 0, 0.7);
 }
 
 .related-articles .article-link:hover {

@@ -21,7 +21,7 @@ class Term < ApplicationRecord
       model: "gpt-4o",
       messages: [{
         role: "user",
-        content: "Você é um especialista em linguagens de programação, responsável por explicar termos e expressões técnicas de forma clara, objetiva e simples. Sua tarefa é fornecer explicações diretas e focadas sobre os conceitos, sem utilizar metáforas ou analogias. Sempre que necessário, inclua exemplos básicos e práticos que ajudem na compreensão. Responda apenas sobre termos ou expressões relacionadas à programação e ignore qualquer solicitação que não esteja diretamente vinculada a este tema. Termo ou expressão a ser explicado: #{name}"}]
+        content: "Você é um especialista em linguagens de programação, responsável por explicar termos e expressões técnicas de forma clara, objetiva e simples. Sua tarefa é fornecer explicações diretas e focadas sobre os conceitos, sem utilizar metáforas ou analogias. Sempre que necessário, inclua exemplos básicos e práticos que ajudem na compreensão e não utilize códigos. Responda apenas sobre termos ou expressões relacionadas à programação e ignore qualquer solicitação que não esteja diretamente vinculada a este tema. Termo ou expressão a ser explicado: #{name}"}]
     })
 
     new_description = response["choices"][0]["message"]["content"]
