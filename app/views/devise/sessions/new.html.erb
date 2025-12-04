@@ -1,5 +1,5 @@
 <div class="login-container">
-  <h1 class="text-neon text-center">LOGIN <i class="fa fa-sign-in-alt"></i></h1>
+  <h1 class="text-neon text-center mb-4">LOGIN <i class="fa fa-sign-in-alt"></i></h1>
 
   <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "login-form" }) do |f| %>
     <div class="form-inputs">
@@ -14,14 +14,13 @@
                   label_html: { class: "custom-label" } %>
     </div>
 
-    <div class="form-actions">
-      <%= f.button :submit, "LOGIN", class: "btn btn-submit" %>
+    <div class="form-actions mt-3">
+      <%= f.button :submit, "LOGIN", class: "btn btn-submit w-100" %>
     </div>
   <% end %>
 
-  <p class="text-center mt-4">
-    Não tem conta? <%= link_to "Crie sua conta", new_registration_path(resource_name), class: "custom-link" %>
-  </p>
-</div>
+  <hr class="border-secondary my-4" style="opacity: 0.3;">
 
-<%= render "devise/shared/links" %>
+  <%= render "devise/shared/links" %>
+
+</div>

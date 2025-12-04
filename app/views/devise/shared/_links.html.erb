@@ -1,21 +1,41 @@
-<%- if controller_name != 'sessions' %>
-  <%= link_to "LOG IN", new_session_path(resource_name) %><br />
-<% end %>
-
-<%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-  <%= link_to "Esqueceu sua senha?", new_password_path(resource_name), class: "forgot-pass-link" %><br />
-<% end %>
-
-<%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
-  <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name) %><br />
-<% end %>
-
-<%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
-  <%= link_to "Didn't receive unlock instructions?", new_unlock_path(resource_name) %><br />
-<% end %>
-
+<%# --- LOGIN SOCIAL (GITHUB) --- %>
 <%- if devise_mapping.omniauthable? %>
-  <%- resource_class.omniauth_providers.each do |provider| %>
-    <%= button_to "Entrar com #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider), data: { turbo: false } %><br />
-  <% end %>
+  <div class="d-grid gap-2 mb-3">
+    <%- resource_class.omniauth_providers.each do |provider| %>
+      <%= button_to omniauth_authorize_path(resource_name, provider),
+          method: :post,
+          data: { turbo: false },
+          class: "btn btn-dark position-relative" do %>
+
+        <%# Ícone do FontAwesome (Se for github, põe o ícone do github) %>
+        <i class="fab fa-<%= provider %> fa-lg me-2"></i>
+        Entrar com <%= OmniAuth::Utils.camelize(provider) %>
+      <% end %>
+    <% end %>
+  </div>
 <% end %>
+
+<%# --- LINKS DE TEXTO --- %>
+<div class="text-center mt-3">
+
+  <%- if controller_name != 'sessions' %>
+    <%= link_to "Já tem uma conta? Entrar", new_session_path(resource_name), class: "text-decoration-none fw-bold" %><br />
+  <% end %>
+
+  <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+    <%= link_to "Não tem conta? Cadastre-se", new_registration_path(resource_name), class: "text-decoration-none fw-bold" %><br />
+  <% end %>
+
+  <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+    <%= link_to "Esqueceu sua senha?", new_password_path(resource_name), class: "text-decoration-none text-muted small" %><br />
+  <% end %>
+
+  <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
+    <%= link_to "Não recebeu as instruções de confirmação?", new_confirmation_path(resource_name), class: "text-decoration-none text-muted small" %><br />
+  <% end %>
+
+  <%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
+    <%= link_to "Não recebeu as instruções de desbloqueio?", new_unlock_path(resource_name), class: "text-decoration-none text-muted small" %><br />
+  <% end %>
+
+</div>
