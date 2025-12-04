@@ -58,6 +58,8 @@ gem "cloudinary"
 gem "solid_cable"
 gem "solid_queue"
 # gem "neighbor"
+gem "omniauth-github"
+gem "omniauth-rails_csrf_protection"
 
 group :development, :test do
   gem "dotenv-rails"
